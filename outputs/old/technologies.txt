@@ -1,0 +1,597 @@
+https://peru.dtvlaweb.com/,200,Adobe Experience Manager,None
+https://peru.dtvlaweb.com/,200,Java,None
+https://peru.dtvlaweb.com/,200,Node.js,None
+https://peru.dtvlaweb.com/,200,Windows Server,None
+https://peru.dtvlaweb.com/,200,Ant Design,None
+https://peru.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://peru.dtvlaweb.com/,200,Socket.io,None
+https://peru.dtvlaweb.com/,200,Handlebars,1.3.0
+https://peru.dtvlaweb.com/,200,IIS,10.0
+https://peru.dtvlaweb.com/,200,Cloudflare,None
+https://peru.dtvlaweb.com/,200,Google Ads,None
+https://peru.dtvlaweb.com/,200,Google Tag Manager,None
+https://peru.dtvlaweb.com/,200,cdnjs,None
+https://peru.dtvlaweb.com/,200,Twitter Ads,None
+https://peru.dtvlaweb.com/,200,TikTok Pixel,None
+https://peru.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://peru.dtvlaweb.com/,200,Microsoft Advertising,None
+https://peru.dtvlaweb.com/,200,LivePerson,None
+https://peru.dtvlaweb.com/,200,jQuery,1.12.4
+https://peru.dtvlaweb.com/,200,Hotjar,None
+https://peru.dtvlaweb.com/,200,Google Optimize,None
+https://peru.dtvlaweb.com/,200,Google Analytics,None
+https://peru.dtvlaweb.com/,200,Google Ads Conversion Tracking,None
+https://peru.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://peru.dtvlaweb.com/,200,core-js,3.11.0
+https://peru.dtvlaweb.com/,200,AppDynamics,20.12.0.3360
+https://peru.dtvlaweb.com/,200,WhatsApp Business Chat,None
+https://peru.dtvlaweb.com/,200,Ookla Speedtest Custom,None
+https://peru.dtvlaweb.com/,200,Sectigo,None
+https://peru.dtvlaweb.com/,200,Open Graph,None
+https://beta.directv.com.co/,200,Adobe Experience Manager,None
+https://beta.directv.com.co/,200,Java,None
+https://beta.directv.com.co/,200,Node.js,None
+https://beta.directv.com.co/,200,Windows Server,None
+https://beta.directv.com.co/,200,Ant Design,None
+https://beta.directv.com.co/,200,Microsoft ASP.NET,None
+https://beta.directv.com.co/,200,Socket.io,None
+https://beta.directv.com.co/,200,Handlebars,1.3.0
+https://beta.directv.com.co/,200,IIS,10.0
+https://beta.directv.com.co/,200,Teads,None
+https://beta.directv.com.co/,200,Sizmek,None
+https://beta.directv.com.co/,200,Google Tag Manager,None
+https://beta.directv.com.co/,200,Twitter Ads,None
+https://beta.directv.com.co/,200,TikTok Pixel,None
+https://beta.directv.com.co/,200,Microsoft Clarity,0.6.43
+https://beta.directv.com.co/,200,Microsoft Advertising,None
+https://beta.directv.com.co/,200,LivePerson,None
+https://beta.directv.com.co/,200,jQuery,1.12.4
+https://beta.directv.com.co/,200,Hotjar,None
+https://beta.directv.com.co/,200,Google Optimize,None
+https://beta.directv.com.co/,200,Google Analytics,None
+https://beta.directv.com.co/,200,Facebook Pixel,2.9.89
+https://beta.directv.com.co/,200,core-js,3.11.0
+https://beta.directv.com.co/,200,AppDynamics,20.12.0.3360
+https://beta.directv.com.co/,200,Ookla Speedtest Custom,None
+https://beta.directv.com.co/,200,Sectigo,None
+https://beta.directv.com.co/,200,Imperva,None
+https://beta.directv.com.co/,200,Open Graph,None
+https://sd.directv.com.co:8008/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8008/,200,Google Analytics,None
+https://sd.directv.com.co:8008/,200,Sectigo,None
+https://sd.directv.com.co:8008/,200,Imperva,None
+https://directvla.com/,200,Sectigo,None
+https://directvla.com/,200,Imperva,None
+https://sd.directv.com.co:2082/,200,Microsoft Advertising,None
+https://sd.directv.com.co:2082/,200,Google Analytics,None
+https://sd.directv.com.co:2082/,200,Sectigo,None
+https://sd.directv.com.co:2082/,200,Imperva,None
+https://esalesuy.dtvpan.com:8001/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8001/,200,Imperva,None
+https://direcsalespr.dtvpan.com:2096/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:2096/,200,Imperva,None
+https://prexapp.dtvpan.com:8443/,200,Sectigo,None
+https://prexapp.dtvpan.com:8443/,200,Imperva,None
+https://prexapp.dtvpan.com:81/,200,Sectigo,None
+https://prexapp.dtvpan.com:81/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8008/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8008/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8083/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8083/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8443/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8443/,200,Imperva,None
+https://argentina.dtvlaweb.com/,200,Adobe Experience Manager,None
+https://argentina.dtvlaweb.com/,200,Java,None
+https://argentina.dtvlaweb.com/,200,Node.js,None
+https://argentina.dtvlaweb.com/,200,Windows Server,None
+https://argentina.dtvlaweb.com/,200,Ant Design,None
+https://argentina.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://argentina.dtvlaweb.com/,200,Socket.io,None
+https://argentina.dtvlaweb.com/,200,Handlebars,1.3.0
+https://argentina.dtvlaweb.com/,200,IIS,10.0
+https://argentina.dtvlaweb.com/,200,Cloudflare,None
+https://argentina.dtvlaweb.com/,200,Google Tag Manager,None
+https://argentina.dtvlaweb.com/,200,cdnjs,None
+https://argentina.dtvlaweb.com/,200,TikTok Pixel,None
+https://argentina.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://argentina.dtvlaweb.com/,200,Microsoft Advertising,None
+https://argentina.dtvlaweb.com/,200,LivePerson,None
+https://argentina.dtvlaweb.com/,200,jQuery,1.12.4
+https://argentina.dtvlaweb.com/,200,Hotjar,None
+https://argentina.dtvlaweb.com/,200,Google Optimize,None
+https://argentina.dtvlaweb.com/,200,Google Analytics,None
+https://argentina.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://argentina.dtvlaweb.com/,200,core-js,3.11.0
+https://argentina.dtvlaweb.com/,200,AppDynamics,20.12.0.3360
+https://argentina.dtvlaweb.com/,200,WhatsApp Business Chat,None
+https://argentina.dtvlaweb.com/,200,Sectigo,None
+https://argentina.dtvlaweb.com/,200,Open Graph,None
+https://prexapp.dtvpan.com:8888/,200,Sectigo,None
+https://prexapp.dtvpan.com:8888/,200,Imperva,None
+https://direcsalespr.dtvpan.com:2087/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:2087/,200,Imperva,None
+https://sd.directv.com.co:8080/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8080/,200,Google Analytics,None
+https://sd.directv.com.co:8080/,200,Sectigo,None
+https://sd.directv.com.co:8080/,200,Imperva,None
+https://directvla.com:8008/,200,Sectigo,None
+https://directvla.com:8008/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8000/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8000/,200,Imperva,None
+https://directvla.com:8000/,200,Sectigo,None
+https://directvla.com:8000/,200,Imperva,None
+https://directvla.com:2096/,200,Sectigo,None
+https://directvla.com:2096/,200,Imperva,None
+https://esalesuy.dtvpan.com:2082/,200,Sectigo,None
+https://esalesuy.dtvpan.com:2082/,200,Imperva,None
+https://direcsalespr.dtvpan.com:81/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:81/,200,Imperva,None
+https://prexapp.dtvpan.com:2082/,200,Sectigo,None
+https://prexapp.dtvpan.com:2082/,200,Imperva,None
+https://directvla.com:3000/,200,Sectigo,None
+https://directvla.com:3000/,200,Imperva,None
+https://dtvweb-cl.dtvpan.com/,200,Sectigo,None
+https://dtvweb-cl.dtvpan.com/,200,Imperva,None
+https://esalesuy.dtvpan.com:81/,200,Sectigo,None
+https://esalesuy.dtvpan.com:81/,200,Imperva,None
+https://esalesuy.dtvpan.com:8443/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8443/,200,Imperva,None
+https://sd.directv.com.co:8888/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8888/,200,Google Analytics,None
+https://sd.directv.com.co:8888/,200,Sectigo,None
+https://sd.directv.com.co:8888/,200,Imperva,None
+https://sd.directv.com.co:81/,200,Microsoft Advertising,None
+https://sd.directv.com.co:81/,200,Google Analytics,None
+https://sd.directv.com.co:81/,200,Sectigo,None
+https://sd.directv.com.co:81/,200,Imperva,None
+https://dtvweb-pe.dtvpan.com/,200,Sectigo,None
+https://dtvweb-pe.dtvpan.com/,200,Imperva,None
+https://direcsalespr.dtvpan.com:3000/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:3000/,200,Imperva,None
+https://prexapp.dtvpan.com:8080/,200,Sectigo,None
+https://prexapp.dtvpan.com:8080/,200,Imperva,None
+https://azimutsales.directvla.com.ec/,200,Windows Server,None
+https://azimutsales.directvla.com.ec/,200,Microsoft ASP.NET,None
+https://azimutsales.directvla.com.ec/,200,IIS,10.0
+https://azimutsales.directvla.com.ec/,200,Sectigo,None
+https://directvla.com:8083/,200,Sectigo,None
+https://directvla.com:8083/,200,Imperva,None
+https://prexapp.dtvpan.com:8008/,200,Sectigo,None
+https://prexapp.dtvpan.com:8008/,200,Imperva,None
+https://esalesuy.dtvpan.com:8888/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8888/,200,Imperva,None
+https://esalesuy.dtvpan.com:3000/,200,Sectigo,None
+https://esalesuy.dtvpan.com:3000/,200,Imperva,None
+https://sd.directv.com.co:8083/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8083/,200,Google Analytics,None
+https://sd.directv.com.co:8083/,200,Sectigo,None
+https://sd.directv.com.co:8083/,200,Imperva,None
+https://www.directv.com.uy/,200,Adobe Experience Manager,None
+https://www.directv.com.uy/,200,Java,None
+https://www.directv.com.uy/,200,Node.js,None
+https://www.directv.com.uy/,200,Windows Server,None
+https://www.directv.com.uy/,200,Ant Design,None
+https://www.directv.com.uy/,200,Amazon ALB,None
+https://www.directv.com.uy/,200,Microsoft ASP.NET,2.0.50727
+https://www.directv.com.uy/,200,Amazon Web Services,None
+https://www.directv.com.uy/,200,Socket.io,None
+https://www.directv.com.uy/,200,Handlebars,1.3.0
+https://www.directv.com.uy/,200,IIS,10.0
+https://www.directv.com.uy/,200,Google Ads,None
+https://www.directv.com.uy/,200,Google Tag Manager,None
+https://www.directv.com.uy/,200,Microsoft Clarity,0.6.43
+https://www.directv.com.uy/,200,Microsoft Advertising,None
+https://www.directv.com.uy/,200,LivePerson,None
+https://www.directv.com.uy/,200,jQuery,1.12.4
+https://www.directv.com.uy/,200,Hotjar,None
+https://www.directv.com.uy/,200,Google Optimize,None
+https://www.directv.com.uy/,200,Google Analytics,None
+https://www.directv.com.uy/,200,Google Ads Conversion Tracking,None
+https://www.directv.com.uy/,200,Facebook Pixel,2.9.89
+https://www.directv.com.uy/,200,core-js,3.0.0
+https://www.directv.com.uy/,200,AppDynamics,20.12.0.3360
+https://www.directv.com.uy/,200,WhatsApp Business Chat,None
+https://www.directv.com.uy/,200,Imperva,None
+https://www.directv.com.uy/,200,Amazon Cloudfront,None
+https://www.directv.com.uy/,200,AWS Certificate Manager,None
+https://www.directv.com.uy/,200,Open Graph,None
+https://cpanel.directvplaypr.com/,200,cPanel,None
+https://cpanel.directvplaypr.com/,200,Apache,None
+https://beta.directv.com.ec/,200,Adobe Experience Manager,None
+https://beta.directv.com.ec/,200,Java,None
+https://beta.directv.com.ec/,200,Node.js,None
+https://beta.directv.com.ec/,200,Windows Server,None
+https://beta.directv.com.ec/,200,Ant Design,None
+https://beta.directv.com.ec/,200,Microsoft ASP.NET,2.0.50727
+https://beta.directv.com.ec/,200,Socket.io,None
+https://beta.directv.com.ec/,200,Handlebars,1.3.0
+https://beta.directv.com.ec/,200,IIS,10.0
+https://beta.directv.com.ec/,200,Google Ads,None
+https://beta.directv.com.ec/,200,Google Tag Manager,None
+https://beta.directv.com.ec/,200,Twitter Ads,None
+https://beta.directv.com.ec/,200,Microsoft Clarity,0.6.43
+https://beta.directv.com.ec/,200,Microsoft Advertising,None
+https://beta.directv.com.ec/,200,LivePerson,None
+https://beta.directv.com.ec/,200,jQuery,1.12.4
+https://beta.directv.com.ec/,200,Hotjar,None
+https://beta.directv.com.ec/,200,Google Optimize,None
+https://beta.directv.com.ec/,200,Google Analytics,None
+https://beta.directv.com.ec/,200,Google Ads Conversion Tracking,None
+https://beta.directv.com.ec/,200,Facebook Pixel,2.9.89
+https://beta.directv.com.ec/,200,core-js,3.0.0
+https://beta.directv.com.ec/,200,AppDynamics,20.12.0.3360
+https://beta.directv.com.ec/,200,Sectigo,None
+https://beta.directv.com.ec/,200,Imperva,None
+https://beta.directv.com.ec/,200,Open Graph,None
+https://beta.directv.com.pe/,200,Adobe Experience Manager,None
+https://beta.directv.com.pe/,200,Java,None
+https://beta.directv.com.pe/,200,Node.js,None
+https://beta.directv.com.pe/,200,Windows Server,None
+https://beta.directv.com.pe/,200,Ant Design,None
+https://beta.directv.com.pe/,200,Socket.io,None
+https://beta.directv.com.pe/,200,Handlebars,1.3.0
+https://beta.directv.com.pe/,200,IIS,10.0
+https://beta.directv.com.pe/,200,Google Tag Manager,None
+https://beta.directv.com.pe/,200,Twitter Ads,None
+https://beta.directv.com.pe/,200,TikTok Pixel,None
+https://beta.directv.com.pe/,200,Microsoft Clarity,0.6.43
+https://beta.directv.com.pe/,200,Microsoft Advertising,None
+https://beta.directv.com.pe/,200,LivePerson,None
+https://beta.directv.com.pe/,200,jQuery,1.12.4
+https://beta.directv.com.pe/,200,Hotjar,None
+https://beta.directv.com.pe/,200,Google Optimize,None
+https://beta.directv.com.pe/,200,Google Analytics,None
+https://beta.directv.com.pe/,200,Facebook Pixel,2.9.89
+https://beta.directv.com.pe/,200,core-js,3.11.0
+https://beta.directv.com.pe/,200,AppDynamics,20.12.0.3360
+https://beta.directv.com.pe/,200,WhatsApp Business Chat,None
+https://beta.directv.com.pe/,200,Ookla Speedtest Custom,None
+https://beta.directv.com.pe/,200,Sectigo,None
+https://beta.directv.com.pe/,200,Imperva,None
+https://beta.directv.com.pe/,200,Open Graph,None
+https://directvla.com:8001/,200,Sectigo,None
+https://directvla.com:8001/,200,Imperva,None
+https://esalesuy.dtvpan.com:8000/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8000/,200,Imperva,None
+https://sd.directv.com.co:2096/,200,Microsoft Advertising,None
+https://sd.directv.com.co:2096/,200,Google Analytics,None
+https://sd.directv.com.co:2096/,200,Sectigo,None
+https://sd.directv.com.co:2096/,200,Imperva,None
+https://directvla.com:8080/,200,Sectigo,None
+https://directvla.com:8080/,200,Imperva,None
+https://prexapp.dtvpan.com:8083/,200,Sectigo,None
+https://prexapp.dtvpan.com:8083/,200,Imperva,None
+https://direcsalespr.dtvpan.com/,200,Sectigo,None
+https://direcsalespr.dtvpan.com/,200,Imperva,None
+https://ecuador.dtvlaweb.com/,200,Adobe Experience Manager,None
+https://ecuador.dtvlaweb.com/,200,Java,None
+https://ecuador.dtvlaweb.com/,200,Windows Server,None
+https://ecuador.dtvlaweb.com/,200,YouTube,None
+https://ecuador.dtvlaweb.com/,200,Ant Design,None
+https://ecuador.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://ecuador.dtvlaweb.com/,200,IIS,10.0
+https://ecuador.dtvlaweb.com/,200,Google Tag Manager,None
+https://ecuador.dtvlaweb.com/,200,FlexSlider,None
+https://ecuador.dtvlaweb.com/,200,Twitter Ads,None
+https://ecuador.dtvlaweb.com/,200,Moment.js,2.1.0
+https://ecuador.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://ecuador.dtvlaweb.com/,200,Microsoft Advertising,None
+https://ecuador.dtvlaweb.com/,200,LivePerson,None
+https://ecuador.dtvlaweb.com/,200,jQuery,1.12.3
+https://ecuador.dtvlaweb.com/,200,Hotjar,None
+https://ecuador.dtvlaweb.com/,200,Google Optimize,None
+https://ecuador.dtvlaweb.com/,200,Google Analytics,None
+https://ecuador.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://ecuador.dtvlaweb.com/,200,core-js,3.0.0
+https://ecuador.dtvlaweb.com/,200,AppDynamics,20.12.0.3360
+https://ecuador.dtvlaweb.com/,200,Sectigo,None
+https://ecuador.dtvlaweb.com/,200,Open Graph,None
+https://sd.directv.com.co:8443/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8443/,200,Google Analytics,None
+https://sd.directv.com.co:8443/,200,Sectigo,None
+https://sd.directv.com.co:8443/,200,Imperva,None
+https://valora.directvsports.com/,200,TypeScript,None
+https://valora.directvsports.com/,200,Chart.js,None
+https://valora.directvsports.com/,200,Angular,None
+https://valora.directvsports.com/,200,Amazon Web Services,None
+https://valora.directvsports.com/,200,Zone.js,None
+https://valora.directvsports.com/,200,toastr,2.1.4
+https://valora.directvsports.com/,200,Google Tag Manager,None
+https://valora.directvsports.com/,200,jQuery,3.6.0
+https://valora.directvsports.com/,200,Google Analytics,None
+https://valora.directvsports.com/,200,Font Awesome,None
+https://valora.directvsports.com/,200,core-js,3.15.1
+https://valora.directvsports.com/,200,HSTS,None
+https://valora.directvsports.com/,200,Amazon S3,None
+https://valora.directvsports.com/,200,Amazon Cloudfront,None
+https://valora.directvsports.com/,200,AWS Certificate Manager,None
+https://valora.directvsports.com/,200,webpack,None
+https://valora.directvsports.com/,200,Open Graph,None
+https://valora.directvsports.com/,200,Module Federation,None
+https://sd.directv.com.co:8001/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8001/,200,Google Analytics,None
+https://sd.directv.com.co:8001/,200,Sectigo,None
+https://sd.directv.com.co:8001/,200,Imperva,None
+https://chile.dtvlaweb.com/,200,Adobe Experience Manager,None
+https://chile.dtvlaweb.com/,200,Java,None
+https://chile.dtvlaweb.com/,200,Node.js,None
+https://chile.dtvlaweb.com/,200,Windows Server,None
+https://chile.dtvlaweb.com/,200,Ant Design,None
+https://chile.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://chile.dtvlaweb.com/,200,Socket.io,None
+https://chile.dtvlaweb.com/,200,Handlebars,1.3.0
+https://chile.dtvlaweb.com/,200,IIS,10.0
+https://chile.dtvlaweb.com/,200,Cloudflare,None
+https://chile.dtvlaweb.com/,200,Google Tag Manager,None
+https://chile.dtvlaweb.com/,200,cdnjs,None
+https://chile.dtvlaweb.com/,200,Twitter Ads,None
+https://chile.dtvlaweb.com/,200,TikTok Pixel,None
+https://chile.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://chile.dtvlaweb.com/,200,Microsoft Advertising,None
+https://chile.dtvlaweb.com/,200,LivePerson,None
+https://chile.dtvlaweb.com/,200,jQuery,1.12.4
+https://chile.dtvlaweb.com/,200,Hotjar,None
+https://chile.dtvlaweb.com/,200,Google Analytics,None
+https://chile.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://chile.dtvlaweb.com/,200,core-js,3.11.0
+https://chile.dtvlaweb.com/,200,AppDynamics,20.12.0.3360
+https://chile.dtvlaweb.com/,200,WhatsApp Business Chat,None
+https://chile.dtvlaweb.com/,200,Sectigo,None
+https://chile.dtvlaweb.com/,200,Open Graph,None
+https://dev.directvgo.com/,200,Amazon Web Services,None
+https://dev.directvgo.com/,200,Nginx,1.14.1
+https://dev.directvgo.com/,200,Amazon Cloudfront,None
+https://dev.directvgo.com/,200,AWS Certificate Manager,None
+https://directvla.com:2082/,200,Sectigo,None
+https://directvla.com:2082/,200,Imperva,None
+https://sincro.dtvpan.com/,200,Amazon Web Services,None
+https://sincro.dtvpan.com/,200,Nginx,None
+https://sincro.dtvpan.com/,200,Sectigo,None
+https://sincro.dtvpan.com/,200,Amazon Cloudfront,None
+https://autogestion.dtvpan.com/,200,Sectigo,None
+https://autogestion.dtvpan.com/,200,Imperva,None
+https://esalesuy.dtvpan.com/,200,Sectigo,None
+https://esalesuy.dtvpan.com/,200,Imperva,None
+https://mantenimiento.dtvlaweb.com/,200,Windows Server,None
+https://mantenimiento.dtvlaweb.com/,200,Bootstrap,None
+https://mantenimiento.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://mantenimiento.dtvlaweb.com/,200,IIS,8.5
+https://mantenimiento.dtvlaweb.com/,200,Cloudflare,None
+https://mantenimiento.dtvlaweb.com/,200,Microsoft Advertising,None
+https://mantenimiento.dtvlaweb.com/,200,Google Analytics,None
+https://mantenimiento.dtvlaweb.com/,200,Font Awesome,None
+https://mantenimiento.dtvlaweb.com/,200,cdnjs,None
+https://mantenimiento.dtvlaweb.com/,200,jQuery,1.10.2
+https://mantenimiento.dtvlaweb.com/,200,Google Font API,None
+https://mantenimiento.dtvlaweb.com/,200,Sectigo,None
+https://mantenimiento.dtvlaweb.com/,200,Imperva,None
+https://colombia.dtvlaweb.com/,200,Adobe Experience Manager,None
+https://colombia.dtvlaweb.com/,200,Java,None
+https://colombia.dtvlaweb.com/,200,Windows Server,None
+https://colombia.dtvlaweb.com/,200,YouTube,None
+https://colombia.dtvlaweb.com/,200,Ant Design,None
+https://colombia.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://colombia.dtvlaweb.com/,200,IIS,10.0
+https://colombia.dtvlaweb.com/,200,Google Ads,None
+https://colombia.dtvlaweb.com/,200,Teads,None
+https://colombia.dtvlaweb.com/,200,Sizmek,None
+https://colombia.dtvlaweb.com/,200,Google Tag Manager,None
+https://colombia.dtvlaweb.com/,200,FlexSlider,None
+https://colombia.dtvlaweb.com/,200,Twitter Ads,None
+https://colombia.dtvlaweb.com/,200,TikTok Pixel,None
+https://colombia.dtvlaweb.com/,200,Moment.js,2.1.0
+https://colombia.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://colombia.dtvlaweb.com/,200,Microsoft Advertising,None
+https://colombia.dtvlaweb.com/,200,LivePerson,None
+https://colombia.dtvlaweb.com/,200,jQuery,1.6.4
+https://colombia.dtvlaweb.com/,200,Hotjar,None
+https://colombia.dtvlaweb.com/,200,Google Optimize,None
+https://colombia.dtvlaweb.com/,200,Google Analytics,None
+https://colombia.dtvlaweb.com/,200,Google Ads Conversion Tracking,None
+https://colombia.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://colombia.dtvlaweb.com/,200,core-js,3.11.0
+https://colombia.dtvlaweb.com/,200,AppDynamics,21.7.0.3493
+https://colombia.dtvlaweb.com/,200,Ookla Speedtest Custom,None
+https://colombia.dtvlaweb.com/,200,Sectigo,None
+https://colombia.dtvlaweb.com/,200,Open Graph,None
+https://directvla.com:81/,200,Sectigo,None
+https://directvla.com:81/,200,Imperva,None
+https://esalesuy.dtvpan.com:2087/,200,Sectigo,None
+https://esalesuy.dtvpan.com:2087/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8888/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8888/,200,Imperva,None
+https://sd.directv.com.co:3000/,200,Microsoft Advertising,None
+https://sd.directv.com.co:3000/,200,Google Analytics,None
+https://sd.directv.com.co:3000/,200,Sectigo,None
+https://sd.directv.com.co:3000/,200,Imperva,None
+https://direcsalespr.dtvpan.com:8001/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8001/,200,Imperva,None
+https://puertorico.dtvlaweb.com/,200,Windows Server,None
+https://puertorico.dtvlaweb.com/,200,YouTube,None
+https://puertorico.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://puertorico.dtvlaweb.com/,200,IIS,10.0
+https://puertorico.dtvlaweb.com/,200,Google Ads,None
+https://puertorico.dtvlaweb.com/,200,Microsoft Advertising,None
+https://puertorico.dtvlaweb.com/,200,Google Tag Manager,None
+https://puertorico.dtvlaweb.com/,200,FlexSlider,None
+https://puertorico.dtvlaweb.com/,200,Quantcast Measure,None
+https://puertorico.dtvlaweb.com/,200,Moment.js,2.1.0
+https://puertorico.dtvlaweb.com/,200,LivePerson,None
+https://puertorico.dtvlaweb.com/,200,jQuery,1.6.4
+https://puertorico.dtvlaweb.com/,200,Google Analytics,None
+https://puertorico.dtvlaweb.com/,200,Google Ads Conversion Tracking,None
+https://puertorico.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://puertorico.dtvlaweb.com/,200,core-js,3.0.0
+https://puertorico.dtvlaweb.com/,200,Adobe Analytics,None
+https://puertorico.dtvlaweb.com/,200,Sectigo,None
+https://puertorico.dtvlaweb.com/,200,Open Graph,None
+https://puertorico.dtvlaweb.com/,200,Issuu,None
+https://prexapp.dtvpan.com:2087/,200,Sectigo,None
+https://prexapp.dtvpan.com:2087/,200,Imperva,None
+https://sd.directv.com.co:8000/,200,Microsoft Advertising,None
+https://sd.directv.com.co:8000/,200,Google Analytics,None
+https://sd.directv.com.co:8000/,200,Sectigo,None
+https://sd.directv.com.co:8000/,200,Imperva,None
+https://prexapp.dtvpan.com:2096/,200,Sectigo,None
+https://prexapp.dtvpan.com:2096/,200,Imperva,None
+https://www.directvchilepagos.cl/,200,Windows Server,None
+https://www.directvchilepagos.cl/,200,Microsoft ASP.NET,None
+https://www.directvchilepagos.cl/,200,IIS,10.0
+https://www.directvchilepagos.cl/,200,Sectigo,None
+https://www.directvchilepagos.cl/,200,Imperva,None
+https://sd.directv.com.co:2087/,200,Microsoft Advertising,None
+https://sd.directv.com.co:2087/,200,Google Analytics,None
+https://sd.directv.com.co:2087/,200,Sectigo,None
+https://sd.directv.com.co:2087/,200,Imperva,None
+https://esalesuy.dtvpan.com:2096/,200,Sectigo,None
+https://esalesuy.dtvpan.com:2096/,200,Imperva,None
+https://bss-prd.directvgo.com/,200,Amazon Web Services,None
+https://bss-prd.directvgo.com/,200,AWS Certificate Manager,None
+https://esalesuy.dtvpan.com:8080/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8080/,200,Imperva,None
+https://vriocorp.com/,200,WordPress,None
+https://vriocorp.com/,200,MySQL,None
+https://vriocorp.com/,200,MariaDB,None
+https://vriocorp.com/,200,PHP,None
+https://vriocorp.com/,200,Bootstrap,3.3.7
+https://vriocorp.com/,200,Varnish,None
+https://vriocorp.com/,200,Yoast SEO,17.7.1
+https://vriocorp.com/,200,Pantheon,None
+https://vriocorp.com/,200,Nginx,None
+https://vriocorp.com/,200,Fastly,None
+https://vriocorp.com/,200,MonsterInsights,8.2.0
+https://vriocorp.com/,200,jQuery Migrate,3.3.2
+https://vriocorp.com/,200,Lodash,4.17.5
+https://vriocorp.com/,200,jQuery,1.12.4
+https://vriocorp.com/,200,Google Analytics,None
+https://vriocorp.com/,200,HSTS,None
+https://vriocorp.com/,200,Open Graph,None
+https://esalesuy.dtvpan.com:8008/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8008/,200,Imperva,None
+https://oncontact.directvla.com.ec/,200,Windows Server,None
+https://oncontact.directvla.com.ec/,200,Vuetify,None
+https://oncontact.directvla.com.ec/,200,Microsoft ASP.NET,None
+https://oncontact.directvla.com.ec/,200,Vue.js,None
+https://oncontact.directvla.com.ec/,200,IIS,10.0
+https://oncontact.directvla.com.ec/,200,core-js,3.21.1
+https://oncontact.directvla.com.ec/,200,jsDelivr,None
+https://oncontact.directvla.com.ec/,200,Google Font API,None
+https://oncontact.directvla.com.ec/,200,Sectigo,None
+https://oncontact.directvla.com.ec/,200,HSTS,None
+https://oncontact.directvla.com.ec/,200,webpack,None
+https://oncontact.directvla.com.ec/,200,Module Federation,None
+https://sd.directv.com.co/,200,Microsoft Advertising,None
+https://sd.directv.com.co/,200,Google Analytics,None
+https://sd.directv.com.co/,200,Sectigo,None
+https://sd.directv.com.co/,200,Imperva,None
+https://sso.vriocorp.com/,200,Node.js,None
+https://sso.vriocorp.com/,200,Nginx,1.20.1
+https://sso.vriocorp.com/,200,Express,None
+https://sso.vriocorp.com/,200,Google Analytics,None
+https://sso.vriocorp.com/,200,Sectigo,None
+https://webmail.directvplaypr.com/,200,Apache,None
+https://uruguay.dtvlaweb.com/,200,Windows Server,None
+https://uruguay.dtvlaweb.com/,200,YouTube,None
+https://uruguay.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://uruguay.dtvlaweb.com/,200,IIS,10.0
+https://uruguay.dtvlaweb.com/,200,Google Ads,None
+https://uruguay.dtvlaweb.com/,200,Google Tag Manager,None
+https://uruguay.dtvlaweb.com/,200,FlexSlider,None
+https://uruguay.dtvlaweb.com/,200,Moment.js,2.1.0
+https://uruguay.dtvlaweb.com/,200,Microsoft Clarity,0.6.43
+https://uruguay.dtvlaweb.com/,200,Microsoft Advertising,None
+https://uruguay.dtvlaweb.com/,200,LivePerson,None
+https://uruguay.dtvlaweb.com/,200,jQuery,1.12.3
+https://uruguay.dtvlaweb.com/,200,Hotjar,None
+https://uruguay.dtvlaweb.com/,200,Google Optimize,None
+https://uruguay.dtvlaweb.com/,200,Google Analytics,None
+https://uruguay.dtvlaweb.com/,200,Google Ads Conversion Tracking,None
+https://uruguay.dtvlaweb.com/,200,Facebook Pixel,2.9.89
+https://uruguay.dtvlaweb.com/,200,core-js,3.0.0
+https://uruguay.dtvlaweb.com/,200,AppDynamics,21.7.0.3493
+https://uruguay.dtvlaweb.com/,200,Adobe Analytics,None
+https://uruguay.dtvlaweb.com/,200,Sectigo,None
+https://uruguay.dtvlaweb.com/,200,Open Graph,None
+https://direcsalespr.dtvpan.com:8080/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:8080/,200,Imperva,None
+https://prexapp.dtvpan.com:3000/,200,Sectigo,None
+https://prexapp.dtvpan.com:3000/,200,Imperva,None
+https://directvla.com:8443/,200,Sectigo,None
+https://directvla.com:8443/,200,Imperva,None
+https://www.directvsports.com/,200,Amazon Web Services,None
+https://www.directvsports.com/,200,React,None
+https://www.directvsports.com/,200,Google Ads,None
+https://www.directvsports.com/,200,Google Tag Manager,None
+https://www.directvsports.com/,200,AppNexus,None
+https://www.directvsports.com/,200,Lodash,4.17.21
+https://www.directvsports.com/,200,Hotjar,None
+https://www.directvsports.com/,200,Google Optimize,None
+https://www.directvsports.com/,200,Google Analytics,None
+https://www.directvsports.com/,200,Google Ads Conversion Tracking,None
+https://www.directvsports.com/,200,Facebook Pixel,2.9.89
+https://www.directvsports.com/,200,core-js,3.0.0
+https://www.directvsports.com/,200,Google Font API,None
+https://www.directvsports.com/,200,Amplitude,None
+https://www.directvsports.com/,200,Sectigo,None
+https://www.directvsports.com/,200,Imperva,None
+https://www.directvsports.com/,200,Amazon S3,None
+https://www.directvsports.com/,200,Amazon Cloudfront,None
+https://www.directvsports.com/,200,PWA,None
+https://www.directvsports.com/,200,Open Graph,None
+https://directvla.com:8888/,200,Sectigo,None
+https://directvla.com:8888/,200,Imperva,None
+https://caribbean.dtvlaweb.com/,200,Astute Solutions,None
+https://caribbean.dtvlaweb.com/,200,Windows Server,None
+https://caribbean.dtvlaweb.com/,200,YouTube,None
+https://caribbean.dtvlaweb.com/,200,Microsoft ASP.NET,4.0.30319
+https://caribbean.dtvlaweb.com/,200,IIS,10.0
+https://caribbean.dtvlaweb.com/,200,Microsoft Advertising,None
+https://caribbean.dtvlaweb.com/,200,Google Tag Manager,None
+https://caribbean.dtvlaweb.com/,200,FlexSlider,None
+https://caribbean.dtvlaweb.com/,200,Quantcast Measure,None
+https://caribbean.dtvlaweb.com/,200,jQuery,1.6.4
+https://caribbean.dtvlaweb.com/,200,Google Analytics,None
+https://caribbean.dtvlaweb.com/,200,Facebook Pixel,None
+https://caribbean.dtvlaweb.com/,200,Adobe Analytics,None
+https://caribbean.dtvlaweb.com/,200,Sectigo,None
+https://caribbean.dtvlaweb.com/,200,Open Graph,None
+https://sspwdtv.dtvpan.com/,200,Sectigo,None
+https://sspwdtv.dtvpan.com/,200,Imperva,None
+https://prexapp.dtvpan.com:8000/,200,Sectigo,None
+https://prexapp.dtvpan.com:8000/,200,Imperva,None
+https://directvla.com:2087/,200,Sectigo,None
+https://directvla.com:2087/,200,Imperva,None
+https://esalesuy.dtvpan.com:8083/,200,Sectigo,None
+https://esalesuy.dtvpan.com:8083/,200,Imperva,None
+https://dtvweb-ec.dtvpan.com/,200,DNN,None
+https://dtvweb-ec.dtvpan.com/,200,Windows Server,None
+https://dtvweb-ec.dtvpan.com/,200,Microsoft ASP.NET,None
+https://dtvweb-ec.dtvpan.com/,200,Bootstrap,3.2.0
+https://dtvweb-ec.dtvpan.com/,200,IIS,10.0
+https://dtvweb-ec.dtvpan.com/,200,Modernizr,2.6.2
+https://dtvweb-ec.dtvpan.com/,200,jQuery UI,1.11.3
+https://dtvweb-ec.dtvpan.com/,200,jQuery Migrate,None
+https://dtvweb-ec.dtvpan.com/,200,jQuery,1.9.1
+https://dtvweb-ec.dtvpan.com/,200,Sectigo,None
+https://dtvweb-ec.dtvpan.com/,200,Imperva,None
+https://prexapp.dtvpan.com/,200,Sectigo,None
+https://prexapp.dtvpan.com/,200,Imperva,None
+https://direcsalespr.dtvpan.com:2082/,200,Sectigo,None
+https://direcsalespr.dtvpan.com:2082/,200,Imperva,None
+https://prexapp.dtvpan.com:8001/,200,Sectigo,None
+https://prexapp.dtvpan.com:8001/,200,Imperva,None
+https://psd.dtvlaweb.com/,200,Windows Server,None
+https://psd.dtvlaweb.com/,200,Bootstrap,4.4.1
+https://psd.dtvlaweb.com/,200,Microsoft ASP.NET,None
+https://psd.dtvlaweb.com/,200,React,None
+https://psd.dtvlaweb.com/,200,IIS,8.5
+https://psd.dtvlaweb.com/,200,Microsoft Advertising,None
+https://psd.dtvlaweb.com/,200,jsDelivr,None
+https://psd.dtvlaweb.com/,200,jQuery CDN,None
+https://psd.dtvlaweb.com/,200,Google Analytics,None
+https://psd.dtvlaweb.com/,200,jQuery,3.4.1
+https://psd.dtvlaweb.com/,200,Google Font API,None
+https://psd.dtvlaweb.com/,200,Sectigo,None
+https://psd.dtvlaweb.com/,200,Imperva,None
+https://psd.dtvlaweb.com/,200,Popper,None
+https://psd.dtvlaweb.com/,200,PWA,None
