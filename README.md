@@ -23,7 +23,6 @@ mover:
 * openredirect.py -> usa la lista generada para buscar openredirects y escribe sobre vuls.txt
 * clickjacking.py -> chequea el xframe y escribe sobre vuls.txt
 * vulnerabilities.py -> ejecuta nuclei y escribe sobre vuls.txt
-* xxs.py
 
 
 TODOS:
