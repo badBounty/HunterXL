@@ -17,10 +17,10 @@ mover:
 * subdomains.py
 * takeover.py
 * protocols.py
+* wafdetect.py
 * dirnfiles.py (opcional)
 * dirsearch.py (opcional)
 * openredirect.py
-* phishing.py
+* clickjacking.py
 * vulnerabilities.py
 * xxs.py
-* wafdetect.py
