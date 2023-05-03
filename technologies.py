@@ -5,8 +5,6 @@ from urllib.parse import urlparse
 OUTPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
 OUTPATH_TECHNOLOGIES="outputs/technologies.txt"
 OUTPATH_WAPPALYZER="outputs/wappalyzer.json"
-OUTPATH_TECHNOLOGIES_JSON="outputs/technologies.json"
-OUTPATH_TECHNOLOGIES_DOMAIN_AUX="outputs/technologies-domain-aux.txt"
 
 data = []
 

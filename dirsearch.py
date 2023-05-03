@@ -15,7 +15,6 @@ OUTPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
 OUTPATH_DIRNFILES="outputs/dirnfiles.txt"
 OUTPATH_DIRNFILES_AUX="outputs/dirnfiles-aux.txt"
 OUTPATH_DIRNFILES_DOMAIN_AUX="outputs/dirnfiles-domain-aux.txt"
-OUTPATH_VULNERABILITIES="outputs/vulnerabilities.txt"
 OUTPATH_WAFDETECT_NOWAF="outputs/wafdetect-nowaf.txt"
 
 if(not os.path.isfile(FILPATH_DIRNFILES)):

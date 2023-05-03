@@ -1,7 +1,6 @@
 import os
 
 OUTPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
-OUTPATH_VULNERABILITIES="outputs/vulnerabilities.txt"
 OUTPATH_DIRNFILES_GAU_AUX="outputs/dirnfiles-gau-aux.txt"
 OUTPATH_DIRNFILES="outputs/dirnfiles.txt"
 
