@@ -10,8 +10,6 @@ clonar en /tools:
 * https://github.com/maaaaz/nmaptocsv.git 
 * https://github.com/punk-security/dnsReaper.git
 
-mover /tools/puertos.txt a /tools/nmaptocsv/
-
 ### Orden de corrida:
 * subdomains.py -> Genera una lista de subdominios usando <u>amass</u> y <u>altdns</u>. Genera **subdomains.txt**.
 * takeover.py -> usa <u>dnsReaper</u> para chequear subdomain takeover y escribe sobre **vulnerabilities.txt**.
