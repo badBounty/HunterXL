@@ -25,8 +25,15 @@ mover /tools/puertos.txt a /tools/nmaptocsv/
 * vulnerabilities.py -> ejecuta <u>nuclei</u> y escribe sobre  **vulnerabilities.txt**.
 * xss.py -> Busca xss con con <u>regex</u> usando **dirnfiles.txt** y escribe sobre **vulnerabilities.txt**.
 
+### Outputs:
+* subdomains.txt -> Listado de subdominios
+* subdomains-webapp.txt -> Urls
+* wafdetect-nowaf.txt -> Urls sin waf
+* dirnfiles.txt -> Endpoints
+* vulnerabilities.txt -> Listado de vuls
+* technologies.txt -> Info de tecnologias por sitio<
 
-TODOS:
+### TODOS:
 * Sumar nmap con esaneo de puertos y scripts, escribir sobre vuls en caso de ser necesario
 * Sumar enumeracion de buckets de s3
 * Sumar analizar links para llenar la lista de endpoints
