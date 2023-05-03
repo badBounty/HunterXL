@@ -23,4 +23,4 @@ mover:
 * phishing.py
 * vulnerabilities.py
 * xxs.py
-* afdetect.py
+* wafdetect.py
