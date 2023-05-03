@@ -5,12 +5,13 @@ Scripts creados para encontrar bugs/vulnerabilidades haciendo tareas de ASM (att
 
 ###Instalacion:
 
-clonar:
-       -> https://github.com/wappalyzer/wappalyzer.git
-       -> https://github.com/maaaaz/nmaptocsv.git
-       -> https://github.com/punk-security/dnsReaper.git
-mover:
-       -> puertos.txt -> nmaptocsv/
+clonar: 
+* https://github.com/wappalyzer/wappalyzer.git 
+* https://github.com/maaaaz/nmaptocsv.git 
+* https://github.com/punk-security/dnsReaper.git
+
+mover: 
+* puertos.txt -> nmaptocsv/
 
 ### Orden de corrida recomendado:
 * subdomains.py
