@@ -29,7 +29,7 @@ clonar en /tools:
 * wafdetect-nowaf.txt -> Urls sin waf
 * dirnfiles.txt -> Endpoints
 * vulnerabilities.txt -> Listado de vuls
-* technologies.txt -> Info de tecnologias por sitio<
+* technologies.txt -> Info de tecnologias por sitio
 
 ### TODOS:
 * Sumar nmap con esaneo de puertos y scripts, escribir sobre vuls en caso de ser necesario
