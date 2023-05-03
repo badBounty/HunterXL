@@ -18,8 +18,8 @@ mover:
 * takeover.py
 * protocols.py
 * wafdetect.py
-* dirnfiles.py (opcional)
-* dirsearch.py (opcional)
+* dirnfiles.py
+* dirsearch.py
 * openredirect.py
 * clickjacking.py
 * vulnerabilities.py
