@@ -20,7 +20,7 @@ mover /tools/puertos.txt a /tools/nmaptocsv/
 * wafdetect.py -> detecta que posee waf con <u>wafw00f</u> y que no. Genera una lista de eso y escribe sobre **vulnerabilities.txt** y **wafdetect-nowaf.txt**.
 * dirnfiles.py -> Usa <u>gau</u> y genera una lista de endpoints para los sitios web usando **subdomains.txt**. Genera **dirnfiles.txt**.
 * dirsearch.py -> Usa <u>dirsearch</u> y actualiza la lista de endpoints para los sitios web sin waf usando **wafdetect-nowaf.txt**. Actualiza **dirnfiles.txt**.
-* openredirect.py -> usa la lista generada *dirnfiles.txt** para buscar openredirects con <u>regex</u> y escribe sobre **vulnerabilities.txt**.
+* openredirect.py -> usa la lista generada **dirnfiles.txt** para buscar openredirects con <u>regex</u> y escribe sobre **vulnerabilities.txt**.
 * clickjacking.py -> chequea el xframe con <u>curl</u> y escribe sobre **vulnerabilities.txt**.
 * vulnerabilities.py -> ejecuta <u>nuclei</u> y escribe sobre  **vulnerabilities.txt**.
 * xss.py -> Busca xss con con <u>regex</u> usando **dirnfiles.txt** y escribe sobre **vulnerabilities.txt**.
