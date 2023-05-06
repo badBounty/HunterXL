@@ -32,7 +32,11 @@ clonar en /tools:
 * technologies.txt -> Info de tecnologias por sitio
 
 ### TODOS:
-* Sumar nmap con esaneo de puertos y scripts, escribir sobre vuls en caso de ser necesario
-* Sumar enumeracion de buckets de s3
-* Sumar analizar links para llenar la lista de endpoints
-* Sumar al escaneo de vulnerabilidades Nikto, Sslscan, Testssl, owasp zap , escribir sobre vuls en caso de ser necesario
+* No utilizar el takeover y vulnerabilities no tienen que borrar los outputs de las tools, y tampoco llenar el vuls.txt
+* Sumar una tool de ssl a  vulnerabilities (alguna de estas: testssl, sslscan, sslyze)
+* Sumar nmap con escaneo de puertos y scripts. portscanne.py
+* Dejar las screenshot de aquatone
+* Sumar enumeracion de buckets de s3 un s3.py luego del subdomains.py
+* Sumar analizar links para llenar la lista de endpoints, crear un link.py
+* Sumar al escaneo de vulnerabilidades Nikto, owasp zap ,Dastardly
+* Subir todos los outputs a defectdojo
