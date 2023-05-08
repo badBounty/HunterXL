@@ -15,7 +15,7 @@ os.remove("aquatone_report.html")
 os.remove("aquatone_session.json")
 shutil.rmtree("headers")
 shutil.rmtree("html")
-shutil.rmtree("screenshots")
+#shutil.rmtree("screenshots")
 
 subdomainsList=open(OUTPATH_SUBDOMAINS_WEBAPP_AUX, 'r')
 while True:
