@@ -10,7 +10,7 @@ OUTPATH_NUCLEI_AUX="outputs/nuclei-aux.json"
 def getDomain(url):
     return urlparse(url).netloc
 
-os.system("nuclei -l "+OUTPATH_SUBDOMAINS_WEBAPP+" -t /home/admin/nuclei-templates -json -o "+OUTPATH_NUCLEI)
+os.system("nuclei -l "+OUTPATH_SUBDOMAINS_WEBAPP+" -t /home/admin/nuclei-templates -je -o "+OUTPATH_NUCLEI)
 
 data = {'vulnerabilities': []}
 
