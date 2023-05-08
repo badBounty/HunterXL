@@ -35,10 +35,10 @@ clonar en /tools:
 
 ### TODOS:
 * Vulnerabilities no tienen que borrar los outputs de las tools, y tampoco llenar el vuls.txt
-* Sumar una tool de ssl a  vulnerabilities (alguna de estas: testssl, sslscan, sslyze)
-* Sumar nmap con escaneo de puertos y scripts. portscanne.py
 * Dejar las screenshot de aquatone
-* Sumar enumeracion de buckets de s3 un s3.py luego del subdomains.py
-* Sumar analizar links para llenar la lista de endpoints, crear un link.py
-* Sumar al escaneo de vulnerabilidades Nikto, owasp zap ,Dastardly
-* Subir todos los outputs a defectdojo
+* Sumar nmap con escaneo de puertos y scripts en un portscanner.py. Guardar la salida de nmap en xml y ademas convertirla a csv con nmaptocsv
+* Sumar tool de ssl a vulnerabilities testssl y sslscan. Dejar los outputs.
+* Sumar al escaneo de vulnerabilidades nikto, owasp zap ,dastardly con contenedores.
+* Una vez que este todo ejecutando lo anterior bien, generar un script subir_resultados.py que suba todos los outputs a defectdojo.
+* Sumar enumeracion de buckets de s3 un s3.py luego del subdomains.py. Generar un output s3.txt
+* Sumar analizar links para llenar la lista de endpoints, crear un link.py y que los links se sume a dirnfiles.txt
