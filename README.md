@@ -20,19 +20,21 @@ clonar en /tools:
 * dirsearch.py -> Usa <u>dirsearch</u> y actualiza la lista de endpoints para los sitios web sin waf usando **wafdetect-nowaf.txt**. Actualiza **dirnfiles.txt**.
 * openredirect.py -> usa la lista generada **dirnfiles.txt** para buscar openredirects con <u>regex</u> y escribe sobre **vulnerabilities.txt**.
 * clickjacking.py -> chequea el xframe con <u>curl</u> y escribe sobre **vulnerabilities.txt**.
-* vulnerabilities.py -> ejecuta <u>nuclei</u> con **subdomains-webapp.txt** y escribe sobre  **vulnerabilities.txt**.
 * xss.py -> Busca xss con con <u>regex</u> usando **dirnfiles.txt** y escribe sobre **vulnerabilities.txt**.
+* vulnerabilities.py -> ejecuta <u>nuclei</u> con **subdomains-webapp.txt**.
 
 ### Outputs:
-* subdomains.txt -> Listado de subdominios
-* subdomains-webapp.txt -> Urls
-* wafdetect-nowaf.txt -> Urls sin waf
-* dirnfiles.txt -> Endpoints
-* vulnerabilities.txt -> Listado de vuls
-* technologies.txt -> Info de tecnologias por sitio
+* subdomains.txt -> Listado de subdominios.
+* subdomains-webapp.txt -> Urls.
+* wafdetect-nowaf.txt -> Urls sin waf.
+* dirnfiles.txt -> Endpoints.
+* vulnerabilities.txt -> Listado de vuls de takeover, wafdetect, openredirect, clickjacking y xss.
+* technologies.txt -> Info de tecnologias por sitio.
+* nuclei.json -> Salida de nuclei.
+* aquatone -> Salida de aquatone con screenshots.
 
 ### TODOS:
-* No utilizar el takeover y vulnerabilities no tienen que borrar los outputs de las tools, y tampoco llenar el vuls.txt
+* Vulnerabilities no tienen que borrar los outputs de las tools, y tampoco llenar el vuls.txt
 * Sumar una tool de ssl a  vulnerabilities (alguna de estas: testssl, sslscan, sslyze)
 * Sumar nmap con escaneo de puertos y scripts. portscanne.py
 * Dejar las screenshot de aquatone
