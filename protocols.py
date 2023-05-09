@@ -7,7 +7,6 @@ DIRPATH_OUTPUTS="outputs"
 OUTPATH_SUBDOMAINS="outputs/subdomains.txt"
 OUTPATH_SUBDOMAINS_WEBAPP_AUX="outputs/subdomains-webapp-aux.txt"
 OUTPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
-
 system("cat " +OUTPATH_SUBDOMAINS+" | aquatone -ports large -threads 7 -chrome-path /usr/bin/chromium")
 system("cat aquatone_urls.txt | grep 'https:' > "+OUTPATH_SUBDOMAINS_WEBAPP_AUX)
 os.remove("aquatone_urls.txt")
