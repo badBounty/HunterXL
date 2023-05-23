@@ -66,8 +66,5 @@ defect_uploader.py host api_key
 * Crear aws.py para enumerar s3 y automatizar otras cosas.
 * Sumar al vulnerabilities.py algo de SSRF y SQLi
 * Crear external.py que realice
-   * Agregar ncrack para FTP, SSH y Telnet
-   * Agregar para FTP nmap banner,ftp-anon,ftp-bounce,ftp-syst
-   * Agregar para SSH nmap banner,ssh-auth-methods,sshv1 ssh-audit.py y sshUsernameEnumExploit.py
-   * Agregar para Telnet nmap banner,telnet-ntlm-info
-   * Agregar para DNS nmap banner,dns-cache-snoop,dns-recursion
+   * Agregar ncrack para FTP, SSH y Telnet.
+   * Agregar para SSH  ssh-audit.py y sshUsernameEnumExploit.py
