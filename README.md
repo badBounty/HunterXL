@@ -61,10 +61,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **RANDOM.nikto.xml**
   * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **RANDOM.dastardly.xml**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **RANDOM.testssl.csv** 
-* defect_uploader.py -> Sube a defect dojo usando los resultados de Zap, Nikto, Testssl y Nuclei. 
-```
-defect_uploader.py host api_key
-```
+* defect_uploader.py -> Sube a defect dojo usando los resultados de Zap, Nikto, Testssl y Nuclei. Se debe configurar dentro las variables host y api_key.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
