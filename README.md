@@ -59,9 +59,9 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Dalfox. In: **paramspider** - Out: **dalfox.txt**.
   * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **RANDOM.zap.json**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **RANDOM.nikto.xml**
-  * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **RANDOM.dastardly.xml**
+  * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **RANDOM.testssl.csv** 
-* defect_uploader.py -> Sube a defect dojo usando los resultados de Zap, Nikto, Testssl y Nuclei. Se debe configurar dentro las variables host y api_key.
+* defect_uploader.py -> Sube a defect dojo usando los resultados de Zap, Nikto, Testssl y Nuclei. Se debe configurar dentro las variables host y api_key. Borra los archivos de las vuls subidas.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -72,9 +72,9 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * technologies.txt -> Info de tecnologias por sitio.
 * dalfox.txt -> Resultado de dalfox con posibles XSS
 * hakrawler.txt -> Resultado de varios endpoins resultado de crawlear el sitio.
-* linkfinder -> Resultado de endpoins de los archivos JS.
+* linkfinder.txt -> Resultado de endpoins de los archivos JS.
 * paramspider.txt -> Resultado del crawler. Se tienen varios endpoints y los valores de los parametros salen con el valor FUZZ
-* RANDOM.dastardly.xml -> Resultado de Dastardly, los nombres de los archivos son random.
+* dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
 * RANDOM.zap.json -> Resultado de OWASP Zap, los nombres de los archivos son random.
 * RANDOM.nikto.xml -> Resultado de Nikto, los nombres de los archivos son random.
 * RANDOM.testssl.csv -> Resultado de Testssl, los nombres de los archivos son random.
