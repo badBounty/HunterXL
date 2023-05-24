@@ -57,11 +57,10 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
   * Ejecuta Dalfox. In: **paramspider** - Out: **dalfox.txt**.
-  * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **RANDOM.zap.json**
-  * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **RANDOM.nikto.xml**
+  * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**
+  * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
-  * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **RANDOM.testssl.csv** 
-* defect_uploader.py -> Sube a defect dojo usando los resultados de Zap, Nikto, Testssl y Nuclei. Se debe configurar dentro las variables host y api_key. Borra los archivos de las vuls subidas.
+  * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -75,10 +74,10 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * linkfinder.txt -> Resultado de endpoins de los archivos JS.
 * paramspider.txt -> Resultado del crawler. Se tienen varios endpoints y los valores de los parametros salen con el valor FUZZ
 * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
-* RANDOM.zap.json -> Resultado de OWASP Zap, los nombres de los archivos son random.
-* RANDOM.nikto.xml -> Resultado de Nikto, los nombres de los archivos son random.
-* RANDOM.testssl.csv -> Resultado de Testssl, los nombres de los archivos son random.
-* nuclei.json -> Salida de nuclei con posibles vuls.
+* zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
+* nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
+* testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
+* nuclei.csv -> Salida de nuclei con posibles vuls.
 
 ---
 
@@ -86,3 +85,4 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * Crear aws.py para enumerar s3 y automatizar otras cosas.
 * Sumar al vulnerabilities.py algo de SSRF y SQLi
 * external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv**.
+* Usar DefectDojo como triager.
