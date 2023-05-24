@@ -18,7 +18,7 @@ Instalar en path:
 * https://github.com/hakluke/hakrawler
 
 ### Orden de ejecucion:
-* subdomains.py -> Genera una lista de subdominios usando amass y altdns. Genera **subdomains.txt**.
+* subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
 * takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **vulnerabilities.txt**.
 * protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**
 * technologies.py -> usa wappalyzer. In: **subdomains-webapp.txt** - Out: **technologies.txt**.
