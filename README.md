@@ -61,7 +61,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
-  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retire.txt** 
+  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -79,7 +79,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
-* retire.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
+* retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 
 ---
 
