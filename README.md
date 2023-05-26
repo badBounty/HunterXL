@@ -14,6 +14,8 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/tomnomnom/httprobe
 * https://github.com/projectdiscovery/httpx
 * https://github.com/hakluke/hakrawler
+* https://github.com/retirejs
+* https://github.com/kacakb/jsfinder
 
 ### Ejecutar
 Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs.
@@ -52,8 +54,8 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ## Web App:
 * technologies.py -> usa wappalyzer. In: **subdomains-webapp.txt** - Out: **technologies.txt**.
 * wafdetect.py -> detecta que posee waf con wafw00f y que no. In: **subdomains-webapp.txt** - Out: **wafdetect-nowaf.txt**.
-* spider.py -> Ejecuta paramspider, linkfinder y hakrawler. In: **subdomains-webapp.txt** - Out: **paramspider.txt**, **linkfinder.txt** y **hakrawler.txt**.
-* contdiscovery.py -> Usa gau y genera una lista de endpoints para los sitios web. Dps Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **subdomains-webapp.txt** y **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
+* spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **params.txt.txt**, **linkfinder.txt** y **spidering.txt**.
+* contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
   * Ejecuta Dalfox. In: **paramspider** - Out: **dalfox.txt**.
@@ -71,15 +73,16 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * dirnfiles.txt -> Endpoints.
 * technologies.txt -> Info de tecnologias por sitio.
 * dalfox.txt -> Resultado de dalfox con posibles XSS
-* hakrawler.txt -> Resultado de varios endpoins resultado de crawlear el sitio.
 * linkfinder.txt -> Resultado de endpoins de los archivos JS.
-* paramspider.txt -> Resultado del crawler. Se tienen varios endpoints y los valores de los parametros salen con el valor FUZZ
 * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
 * zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
 * retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
+* spidering.txt -> Listado de endpoints y urls producto del spidering de varias tools.
+* linkfinder.txt -> Listado de enpoints y urls encontradas en archivos JavaScript.
+* params.txt -> Listado de URLs con parametros GET.
 
 ---
 
