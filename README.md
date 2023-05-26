@@ -45,7 +45,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * output/screenshots ->  Captura de pantalla de los render web.
 * output/response -> Respuestas HTTP de los sitios web.
 * technologies.txt -> Info de tecnologias por sitio.
-0//////////er4rfeiu0'p
 ---
 
 ## External:
