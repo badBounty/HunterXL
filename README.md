@@ -23,6 +23,7 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/hakluke/hakrawler
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
+* https://github.com/sqlmapproject/sqlmap
 
 ### Ejecutar
 Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs.
@@ -76,7 +77,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
-**
+
 ### Outputs:
 * wafdetect-nowaf.txt -> Urls sin waf.
 * dirnfiles.txt -> Endpoints.
@@ -89,9 +90,11 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 * spidering.txt -> Listado de endpoints y urls producto del spidering de varias tools.
 * linkfinder.txt -> Listado de enpoints y urls encontradas en archivos JavaScript.
-* xssstrike.txt -> Listado de URLs con parametros GET.
+* xssstrike.txt -> Listado de URLs vulnerables a XSS.
 * dalfox.txt -> Resultado de dalfox con posibles XSS
-* openredirect.txt -> Listado de URLs vulnerbales a Open Redirect.
+* openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
+* sqlmap.txt -> Resultado de inyectar en parametros GET del spidering.
+* airixss.txt -> Resultado de inyectar en parametros get los payloads xss de la carpeta inputs/xss.txt
 
 ---
 
