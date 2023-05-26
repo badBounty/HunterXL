@@ -73,7 +73,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.txt**.
   * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.txt**.
   * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.txt**.
-  * Ejecuta airixss sobre los resultados del spidering usando una custom list. In: **spidering.txt** - Out: **airixss.txt**.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -94,7 +93,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * dalfox.txt -> Resultado de dalfox con posibles XSS
 * openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
 * sqlmap.txt -> Resultado de inyectar en parametros GET del spidering.
-* airixss.txt -> Resultado de inyectar en parametros get los payloads xss de la carpeta inputs/xss.txt
 
 ---
 
