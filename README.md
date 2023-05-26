@@ -4,7 +4,6 @@
 Se debe clonar este repositorio. Luego crear una carpeta "tools"
 
 ### Clonar e instalar en /tools: 
-* https://github.com/wappalyzer/wappalyzer.git 
 * https://github.com/maaaaz/nmaptocsv.git 
 * https://github.com/punk-security/dnsReaper.git
 * https://github.com/GerbenJavado/LinkFinder.git
@@ -24,6 +23,7 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
 * https://github.com/sqlmapproject/sqlmap
+* https://github.com/santoru/shcheck
 
 ### Ejecutar
 Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs.
@@ -31,8 +31,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ## Recon:
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
 * takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **vulnerabilities.txt**.
-* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**
-* technologies.py -> usa wappalyzer. In: **subdomains-webapp.txt** - Out: **technologies.txt**.
+* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**.
 
 ### Inputs:
 * domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
@@ -44,7 +43,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
 * output/screenshots ->  Captura de pantalla de los render web.
 * output/response -> Respuestas HTTP de los sitios web.
-* technologies.txt -> Info de tecnologias por sitio.
 ---
 
 ## External:
@@ -73,6 +71,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.txt**.
   * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.txt**.
   * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.txt**.
+  * Ejecuta header scan. In: **subdomains-webapp.txt** - Out: **secheaders.txt**.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -93,6 +92,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * dalfox.txt -> Resultado de dalfox con posibles XSS
 * openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
 * sqlmap.txt -> Resultado de inyectar en parametros GET del spidering.
+* secheaders.txt -> Indica que sitios tienen encabezados faltantes.
 
 ---
 
