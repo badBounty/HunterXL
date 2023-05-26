@@ -38,7 +38,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
 
 ### Outputs:
-*Nota: Estos archivos se crean en la carpeta outputs.
 * subdomains.txt -> Listado de subdominios.
 * takeover.txt -> Listado de vuls de takeover.
 * subdomains-webapp.txt -> Urls.
@@ -55,7 +54,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * subdomains.txt.txt ->  Listado de subdominios. **El archivo debe existir dentro de la carpeta outputs.**
 
 ### Outputs:
-*Nota: Si la carpeta de output configurada no existe se crea automaticamente.
 * ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.
 
 ---
@@ -74,6 +72,8 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
   * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.txt**.
   * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.txt**.
+  * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.txt**.
+  * Ejecuta airixss sobre los resultados del spidering usando una custom list. In: **spidering.txt** - Out: **airixss.txt**.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
