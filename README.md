@@ -31,6 +31,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
 * takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **vulnerabilities.txt**.
 * protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**
+* *echnologies.py -> usa wappalyzer. In: **subdomains-webapp.txt** - Out: **technologies.txt**.
 
 ### Inputs:
 * domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
@@ -40,10 +41,11 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * subdomains.txt -> Listado de subdominios.
 * takeover.txt -> Listado de vuls de takeover.
 * subdomains-webapp.txt -> Urls.
+* httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
 * output/screenshots ->  Captura de pantalla de los render web.
 * output/response -> Respuestas HTTP de los sitios web.
-* httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
-
+* technologies.txt -> Info de tecnologias por sitio.
+0//////////er4rfeiu0'p
 ---
 
 ## External:
@@ -59,18 +61,18 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ---
 
 ## Web App:
-* technologies.py -> usa wappalyzer. In: **subdomains-webapp.txt** - Out: **technologies.txt**.
 * wafdetect.py -> detecta que posee waf con wafw00f y que no. In: **subdomains-webapp.txt** - Out: **wafdetect-nowaf.txt**.
 * spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **params.txt.txt**, **linkfinder.txt** y **spidering.txt**.
 * contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
-  * Ejecuta Dalfox. In: **paramspider** - Out: **dalfox.txt**.
   * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
   * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
+  * Ejecuta Dalfox. In: **paramspider** - Out: **dalfox.txt**.
+  * Ejecuta XSSstrike.  **subdomains-webapp.txt** - Out: **xssstrike.txt**.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -78,8 +80,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ### Outputs:
 * wafdetect-nowaf.txt -> Urls sin waf.
 * dirnfiles.txt -> Endpoints.
-* technologies.txt -> Info de tecnologias por sitio.
-* dalfox.txt -> Resultado de dalfox con posibles XSS
 * linkfinder.txt -> Resultado de endpoins de los archivos JS.
 * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
 * zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
@@ -89,7 +89,8 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 * spidering.txt -> Listado de endpoints y urls producto del spidering de varias tools.
 * linkfinder.txt -> Listado de enpoints y urls encontradas en archivos JavaScript.
-* params.txt -> Listado de URLs con parametros GET.
+* dalfox.txt -> Resultado de dalfox con posibles XSS
+* xssstrike.txt -> Listado de URLs con parametros GET.
 
 ---
 
