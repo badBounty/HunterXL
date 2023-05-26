@@ -1,2 +1,0 @@
-sudo nmap -sSUV -Pn -T4 -iL subdomains.txt -p cat ports.txt -oN subdomains_scan.nmap
-python3 nmaptocsv.py -i subdomains_scan.nmap -s -d "," -f fqdn-protocol-port-service-version -n -o puertos.txt
