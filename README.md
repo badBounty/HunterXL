@@ -94,7 +94,5 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ---
 
 ## TODO:
-* Crear aws.py para enumerar s3 y automatizar otras cosas.
-* Sumar al vulnerabilities.py algo de SSRF y SQLi
-* external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv**.
-* Usar DefectDojo como triager.
+* aws.py -> Enumerar s3 y automatizar otros checks de AWS.
+* external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
