@@ -30,7 +30,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ## Recon:
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
-* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **vulnerabilities.txt**.
+* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.txt**.
 * protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**.
 
 ### Inputs:
@@ -79,15 +79,12 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ### Outputs:
 * wafdetect-nowaf.txt -> Urls sin waf.
 * dirnfiles.txt -> Endpoints.
-* linkfinder.txt -> Resultado de endpoins de los archivos JS.
 * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
 * zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
 * retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
-* spidering.txt -> Listado de endpoints y urls producto del spidering de varias tools.
-* linkfinder.txt -> Listado de enpoints y urls encontradas en archivos JavaScript.
 * xssstrike.txt -> Listado de URLs vulnerables a XSS.
 * dalfox.txt -> Resultado de dalfox con posibles XSS
 * openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
