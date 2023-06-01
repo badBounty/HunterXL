@@ -48,9 +48,6 @@ if(not os.path.isfile(FILPATH_SUBDOMAINS)):
 	subdomainsWordlists.close()
 
 
-#subprocess.run(["cp", FILPATH_RESOLVERS, "./resolvers.txt"])
-
-
 if(os.path.isfile(INPATH_DOMAINS)):
     domainsList=open(INPATH_DOMAINS, 'r')
     while True:
@@ -71,4 +68,4 @@ if(os.path.isfile(INPATH_DOMAINS)):
 os.system("sort -u "+OUTPATH_SUBDOMAINS_AUX+" > "+OUTPATH_SUBDOMAINS)
 os.remove(OUTPATH_SUBDOMAINS_AUX)
 
-#subprocess.run(["rm", "./resolvers.txt"])
+subprocess.run(["rm", "-r" , "wordlists"])
