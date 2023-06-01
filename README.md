@@ -57,9 +57,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
-  * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
-  * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
   * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
   * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
@@ -74,8 +72,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ### Outputs:
 * wafdetect-nowaf.txt -> Urls sin waf.
 * dirnfiles.txt -> Endpoints.
-* dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
-* zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
@@ -91,4 +87,6 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ## TODO:
 * aws.py -> Enumerar s3 y automatizar otros checks de AWS.
 * external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
+* dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
+* zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **zap.csv**
 
