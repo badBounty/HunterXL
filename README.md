@@ -30,26 +30,26 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ## Recon:
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
-* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.txt**.
-* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**.
+* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.cdv**.
+* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **httpx/screenshots** y **httpx/response**.
 
 ### Inputs:
 * domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
 
 ### Outputs:
 * subdomains.txt -> Listado de subdominios.
-* takeover.txt -> Listado de vuls de takeover.
+* takeover.csv -> Listado de vuls de takeover.
 * subdomains-webapp.txt -> Urls.
 * httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
-* output/screenshots ->  Captura de pantalla de los render web.
-* output/response -> Respuestas HTTP de los sitios web.
+* httpx/screenshots ->  Captura de pantalla de los render web.
+* http/response -> Respuestas HTTP de los sitios web.x
 ---
 
 ## External:
 * portscan.py -> Ejecuta nmap tcp custom con scripts y usa nmaptocsv para generar el resultado. In: **subdomains.txt** - Out: **ports.csv**.
 
 ### Inputs:
-* subdomains.txt.txt ->  Listado de subdominios. **El archivo debe existir dentro de la carpeta outputs.**
+* subdomains.txt ->  Listado de subdominios. **El archivo debe existir dentro de la carpeta outputs.**
 
 ### Outputs:
 * ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.

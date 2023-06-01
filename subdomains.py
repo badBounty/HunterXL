@@ -57,7 +57,7 @@ if(os.path.isfile(INPATH_DOMAINS)):
         domain=domainsList.readline()
         if not domain:
             break
-        subprocess.run(["amass","enum","-active","-d",domain.strip(),"-rf",FILPATH_RESOLVERS,"-brute","-w",FILPATH_SUBDOMAINS,"-o",OUTPATH_AMASS])
+        subprocess.run(["amass","enum","-active","-d",domain.strip(),"-alts","-rf",FILPATH_RESOLVERS,"-brute","-w",FILPATH_SUBDOMAINS,"-o",OUTPATH_AMASS])
         subprocess.run(["altdns","-i",OUTPATH_AMASS,"-o","dataoutput.txt","-w",FILPATH_WORDS,"-r","-s",OUTPATH_ALTNDS_AUX,"-t","20"])
         os.remove("dataoutput.txt")
         os.system("cat "+OUTPATH_ALTNDS_AUX+" | awk -F: '(NR==0){h1=$1;h2=$2;next} {print $1}' > "+OUTPATH_ALTNDS)
