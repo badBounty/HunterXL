@@ -15,7 +15,6 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/hakluke/hakrawler
 * https://github.com/retirejs
 * https://github.com/kacakb/jsfinder
-* https://github.com/hakluke/hakrawler
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
 * https://github.com/sqlmapproject/sqlmap
