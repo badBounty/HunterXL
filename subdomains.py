@@ -23,13 +23,13 @@ URLPATH_RESOLVERS="https://raw.githubusercontent.com/blechschmidt/massdns/master
 
 if(not os.path.isdir(DIRPATH_WORDLISTS)):
 	os.mkdir(DIRPATH_WORDLISTS)
- 
+
 if(not os.path.isdir(DIRPATH_INPUTS)):
 	os.mkdir(DIRPATH_INPUTS)
 
 if(not os.path.isdir(DIRPATH_OUTPUTS)):
 	os.mkdir(DIRPATH_OUTPUTS)
- 
+
 if(not os.path.isfile(FILPATH_WORDS)):
 	subprocess.run(["wget",URLPATH_WORDS,"-q","-P",DIRPATH_WORDLISTS])
 
@@ -46,7 +46,10 @@ if(not os.path.isfile(FILPATH_SUBDOMAINS)):
 		os.system("cat "+FILPATH_SUBDOMAINS_AUX+" >> "+FILPATH_SUBDOMAINS)
 		os.remove(FILPATH_SUBDOMAINS_AUX)
 	subdomainsWordlists.close()
-    
+
+
+#subprocess.run(["cp", FILPATH_RESOLVERS, "./resolvers.txt"])
+
 
 if(os.path.isfile(INPATH_DOMAINS)):
     domainsList=open(INPATH_DOMAINS, 'r')
@@ -54,7 +57,7 @@ if(os.path.isfile(INPATH_DOMAINS)):
         domain=domainsList.readline()
         if not domain:
             break
-        subprocess.run(["amass","enum","-active","-d",domain.strip(),"-rf","resolvers.txt","-brute","-w",FILPATH_SUBDOMAINS,"-o",OUTPATH_AMASS])
+        subprocess.run(["amass","enum","-active","-d",domain.strip(),"-rf",FILPATH_RESOLVERS,"-brute","-w",FILPATH_SUBDOMAINS,"-o",OUTPATH_AMASS])
         subprocess.run(["altdns","-i",OUTPATH_AMASS,"-o","dataoutput.txt","-w",FILPATH_WORDS,"-r","-s",OUTPATH_ALTNDS_AUX,"-t","20"])
         os.remove("dataoutput.txt")
         os.system("cat "+OUTPATH_ALTNDS_AUX+" | awk -F: '(NR==0){h1=$1;h2=$2;next} {print $1}' > "+OUTPATH_ALTNDS)
@@ -67,3 +70,5 @@ if(os.path.isfile(INPATH_DOMAINS)):
 
 os.system("sort -u "+OUTPATH_SUBDOMAINS_AUX+" > "+OUTPATH_SUBDOMAINS)
 os.remove(OUTPATH_SUBDOMAINS_AUX)
+
+#subprocess.run(["rm", "./resolvers.txt"])

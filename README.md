@@ -1,44 +1,99 @@
 # HunterXL
-## Bug Hunter v2
 
-Scripts creados para encontrar bugs/vulnerabilidades haciendo tareas de ASM (attack surface management)
+## Instalacion:
+Se debe clonar este repositorio. Luego crear una carpeta "tools"
 
-### Instalacion:
-
-clonar en /tools: 
-* https://github.com/wappalyzer/wappalyzer.git 
+### Clonar e instalar en /tools: 
 * https://github.com/maaaaz/nmaptocsv.git 
 * https://github.com/punk-security/dnsReaper.git
+* https://github.com/GerbenJavado/LinkFinder.git
+* https://github.com/devanshbatham/ParamSpider.git
+* https://github.com/devanshbatham/ParamSpider
+* https://github.com/GerbenJavado/LinkFinder
 
-### Orden de corrida:
-* subdomains.py -> Genera una lista de subdominios usando <u>amass</u> y <u>altdns</u>. Genera **subdomains.txt**.
-* takeover.py -> usa <u>dnsReaper</u> para chequear subdomain takeover y escribe sobre **vulnerabilities.txt**.
-* protocols.py -> usa <u>aquatone</u> para obtener un listado de URLs y <u>curl</u> para chequear contra el status 200. Genera **subdomains-webapp.txt**.
-* technologies.py -> usa <u>wappalyzer</u> y **subdomains-webapp.txt**. Llena el archivo de output **technologies.txt**.
-* wafdetect.py -> detecta que posee waf con <u>wafw00f</u> y que no. Genera una lista de eso y escribe sobre **vulnerabilities.txt** y **wafdetect-nowaf.txt**.
-* dirnfiles.py -> Usa <u>gau</u> y genera una lista de endpoints para los sitios web usando **subdomains.txt**. Genera **dirnfiles.txt**.
-* dirsearch.py -> Usa <u>dirsearch</u> y actualiza la lista de endpoints para los sitios web sin waf usando **wafdetect-nowaf.txt**. Actualiza **dirnfiles.txt**.
-* openredirect.py -> usa la lista generada **dirnfiles.txt** para buscar openredirects con <u>regex</u> y escribe sobre **vulnerabilities.txt**.
-* clickjacking.py -> chequea el xframe con <u>curl</u> y escribe sobre **vulnerabilities.txt**.
-* xss.py -> Busca xss con con <u>regex</u> usando **dirnfiles.txt** y escribe sobre **vulnerabilities.txt**.
-* vulnerabilities.py -> ejecuta <u>nuclei</u> con **subdomains-webapp.txt**.
+### Instalar en path:
+* https://github.com/tomnomnom/httprobe
+* https://github.com/projectdiscovery/httpx
+* https://github.com/hakluke/hakrawler
+* https://github.com/retirejs
+* https://github.com/kacakb/jsfinder
+* https://github.com/jaeles-project/gospider
+* https://github.com/tomnomnom/gf
+* https://github.com/hakluke/hakrawler
+* https://github.com/lc/gau
+* https://github.com/projectdiscovery/katana
+* https://github.com/sqlmapproject/sqlmap
+* https://github.com/santoru/shcheck
+
+### Ejecutar
+Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs.
+
+## Recon:
+* subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
+* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.txt**.
+* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **output/screenshots** y **output/response**.
+
+### Inputs:
+* domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
 
 ### Outputs:
 * subdomains.txt -> Listado de subdominios.
+* takeover.txt -> Listado de vuls de takeover.
 * subdomains-webapp.txt -> Urls.
+* httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
+* output/screenshots ->  Captura de pantalla de los render web.
+* output/response -> Respuestas HTTP de los sitios web.
+---
+
+## External:
+* portscan.py -> Ejecuta nmap tcp custom con scripts y usa nmaptocsv para generar el resultado. In: **subdomains.txt** - Out: **ports.csv**.
+
+### Inputs:
+* subdomains.txt.txt ->  Listado de subdominios. **El archivo debe existir dentro de la carpeta outputs.**
+
+### Outputs:
+* ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.
+
+---
+
+## Web App:
+* wafdetect.py -> detecta que posee waf con wafw00f y que no. In: **subdomains-webapp.txt** - Out: **wafdetect-nowaf.txt**.
+* spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
+* contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
+* vulnerabilities.py ->
+  * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
+  * Ejecuta OWASP ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**
+  * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
+  * Ejecuta Dastardly. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
+  * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
+  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
+  * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
+  * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.txt**.
+  * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.txt**.
+  * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.txt**.
+  * Ejecuta header scan. In: **subdomains-webapp.txt** - Out: **secheaders.txt**.
+
+### Inputs:
+* subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
+
+### Outputs:
 * wafdetect-nowaf.txt -> Urls sin waf.
 * dirnfiles.txt -> Endpoints.
-* vulnerabilities.txt -> Listado de vuls de takeover, wafdetect, openredirect, clickjacking y xss.
-* technologies.txt -> Info de tecnologias por sitio.
-* nuclei.json -> Salida de nuclei.
-* aquatone -> Salida de aquatone con screenshots.
+* dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV.
+* zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV.
+* nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
+* testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
+* nuclei.csv -> Salida de nuclei con posibles vuls.
+* retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
+* xssstrike.txt -> Listado de URLs vulnerables a XSS.
+* dalfox.txt -> Resultado de dalfox con posibles XSS
+* openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
+* sqlmap.txt -> Resultado de inyectar en parametros GET del spidering.
+* secheaders.txt -> Indica que sitios tienen encabezados faltantes.
 
-### TODOS:
-* Vulnerabilities no tienen que borrar los outputs de las tools, y tampoco llenar el vuls.txt
-* Dejar las screenshot de aquatone
-* Sumar nmap con escaneo de puertos y scripts en un portscanner.py. Guardar la salida de nmap en xml y ademas convertirla a csv con nmaptocsv
-* Sumar tool de ssl a vulnerabilities testssl y sslscan. Dejar los outputs.
-* Sumar al escaneo de vulnerabilidades nikto, owasp zap ,dastardly con contenedores.
-* Una vez que este todo ejecutando lo anterior bien, generar un script subir_resultados.py que suba todos los outputs a defectdojo.
-* Sumar enumeracion de buckets de s3 un s3.py luego del subdomains.py. Generar un output s3.txt
-* Sumar analizar links para llenar la lista de endpoints, crear un link.py y que los links se sume a dirnfiles.txt
+---
+
+## TODO:
+* aws.py -> Enumerar s3 y automatizar otros checks de AWS.
+* external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
+
