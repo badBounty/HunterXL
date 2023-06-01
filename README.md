@@ -25,7 +25,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ## Recon:
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
-* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.cdv**.
+* takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.csv**.
 * protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **httpx/screenshots** y **httpx/response**.
 
 ### Inputs:
