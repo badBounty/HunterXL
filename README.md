@@ -4,12 +4,10 @@
 Se debe clonar este repositorio. Luego crear una carpeta "tools"
 
 ### Clonar e instalar en /tools: 
-* https://github.com/maaaaz/nmaptocsv.git 
-* https://github.com/punk-security/dnsReaper.git
-* https://github.com/GerbenJavado/LinkFinder.git
-* https://github.com/devanshbatham/ParamSpider.git
-* https://github.com/devanshbatham/ParamSpider
+* https://github.com/maaaaz/nmaptocsv
+* https://github.com/punk-security/dnsReaper
 * https://github.com/GerbenJavado/LinkFinder
+* https://github.com/devanshbatham/ParamSpider
 
 ### Instalar en path:
 * https://github.com/tomnomnom/httprobe
@@ -17,8 +15,6 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/hakluke/hakrawler
 * https://github.com/retirejs
 * https://github.com/kacakb/jsfinder
-* https://github.com/jaeles-project/gospider
-* https://github.com/tomnomnom/gf
 * https://github.com/hakluke/hakrawler
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
