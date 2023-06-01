@@ -2,7 +2,7 @@ import os,subprocess
 
 from urllib.parse import urlparse
 
-OUTPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
+INPATH_SUBDOMAINS_WEBAPP="outputs/subdomains-webapp.txt"
 OUTPATH_DIRNFILES_DOMAIN_AUX="outputs/dirnfiles-domain-aux.txt"
 OUTPATH_VULNERABILITIES="outputs/vulnerabilities.txt"
 OUTPATH_WAFDETECT_NOWAF="outputs/wafdetect-nowaf.txt"
@@ -10,7 +10,7 @@ OUTPATH_WAFDETECT_NOWAF="outputs/wafdetect-nowaf.txt"
 def getDomain(url):
     return urlparse(url).netloc
 
-webappsList=open(OUTPATH_SUBDOMAINS_WEBAPP, 'r')
+webappsList=open(INPATH_SUBDOMAINS_WEBAPP, 'r')
 while True:
     endpoint=webappsList.readline()
     

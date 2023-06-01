@@ -1,10 +1,10 @@
 import subprocess,os,json
 
 OUTPATH_DNSREAPER="outputs/dnsreaper.json"
-OUTPATH_SUBDOMAINS="outputs/subdomains.txt"
+INPATH_SUBDOMAINS="outputs/subdomains.txt"
 OUTPATH_VULNERABILITIES="outputs/vulnerabilities.txt"
 
-subprocess.run(["python3","tools/dnsReaper/main.py","file","--filename",OUTPATH_SUBDOMAINS,"--out","outputs/dnsreaper","--out-format","json"])
+subprocess.run(["python3","tools/dnsReaper/main.py","file","--filename",INPATH_SUBDOMAINS,"--out","outputs/dnsreaper","--out-format","json"])
 
 if(os.path.isfile(OUTPATH_DNSREAPER)):
     if(os.stat(OUTPATH_DNSREAPER).st_size != 0):
