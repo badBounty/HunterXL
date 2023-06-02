@@ -56,7 +56,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
 * vulnerabilities.py ->
-  * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.json**.
+  * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.txt**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
   * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
@@ -74,7 +74,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * dirnfiles.txt -> Endpoints.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
-* nuclei.csv -> Salida de nuclei con posibles vuls.
+* nuclei.txt -> Salida de nuclei con posibles vuls.
 * retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 * xssstrike.txt -> Listado de URLs vulnerables a XSS.
 * dalfox.txt -> Resultado de dalfox con posibles XSS
