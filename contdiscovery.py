@@ -34,7 +34,7 @@ if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
 		endpoint=noWafWebappsList.readline()
 		if not endpoint:
 			break
-		system("dirsearch -u "+endpoint.strip()+" -w "+FILPATH_DIRNFILES+" -o "+OUTPATH_DIRNFILES_AUX+" -f -r --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh -i 200 --format=csv -t 60")
+		system("dirsearch -u "+endpoint.strip()+" -w "+FILPATH_DIRNFILES+" -o "+OUTPATH_DIRNFILES_AUX+" --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60")
 		system("cat "+OUTPATH_DIRNFILES_AUX+" >> "+OUTPATH_DIRNFILES)
 		os.remove(OUTPATH_DIRNFILES_AUX)
 	noWafWebappsList.close()
