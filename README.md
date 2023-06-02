@@ -110,8 +110,11 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ---
 
 ## TODO:
-* aws.py -> Enumerar s3 y automatizar otros checks de AWS.
-* external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
-* dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
-* zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **zap.csv**
+* Agregar ZAP o dastardly
+  * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **dastardly.csv**
+  * zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **zap.csv**
+* Migrar los txt a CSV
+* Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
+* Agregar external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
+
 
