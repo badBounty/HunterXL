@@ -1,6 +1,31 @@
 # HunterXL
 
-## Instalacion:
+## Listado de Diccionarios:
+Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse:
+* subdomains-wordlists.txt: Indica URLs de donde descargar los diccionarios para enumerar subdominios por fuerza bruta. Se recomienda agregar uno o mas de estos:
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/sortedcombined-knock-dnsrecon-fierce-reconng.txt
+  * https://gist.githubusercontent.com/jhaddix/f64c97d0863a78454e44c2f7119c2a6a/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+  * https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/discovery/dns/dnsmapCommonSubdomains.txt
+  * https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/discovery/dns/alexaTop1mAXFRcommonSubdomains.txt
+* dirnfiles-wordlists.txt: Indica URLs de donde descargar los diccionarios para hacer content discovery. Se recomienda agregar uno o mas de estos:
+  * https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/dirsearch.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-files.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-small.txt
+  * https://raw.githubusercontent.com/tismayil/ohmybackup/master/files/files.txt
+  * https://raw.githubusercontent.com/tismayil/ohmybackup/master/files/folders.txt
+  * https://raw.githubusercontent.com/clarkvoss/AEM-List/main/paths
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/AdobeCQ-AEM.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/nginx.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/oracle.txt
+  * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt  
+
+Adicionalmente pueden usarse mas de estos repositorios:
+* https://github.com/danielmiessler/SecLists
+* https://github.com/fuzzdb-project/fuzzdb
+* https://github.com/maxpowersi/MyCustomFuzzList
+
+## Instalación:
 Se debe clonar este repositorio. Luego crear una carpeta "tools"
 
 ### Clonar e instalar en /tools: 
@@ -20,11 +45,11 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/sqlmapproject/sqlmap
 * https://github.com/santoru/shcheck
 
-### Ejecutar
-Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs.
+## Ejecutar
+Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs. luego ejecutar los scripts de alguno de los tres modulos Recon, External y Web App.
 
 ## Recon:
-* subdomains.py -> Genera una lista de subdominios usando amass y altdns. In: domains.txt - Out: **subdomains.txt**.
+* subdomains.py -> Genera una lista de subdominios usando amass y altdns. Utiliza el archivo **inputs/subdomains-wordlists.txt** con URLs de donde descargar los diccionarios y hacerle un merge. In: domains.txt - Out: **subdomains.txt**.
 * takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.csv**.
 * protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **httpx/screenshots** y **httpx/response**.
 
@@ -53,7 +78,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ## Web App:
 * wafdetect.py -> detecta que posee waf con wafw00f y que no. In: **subdomains-webapp.txt** - Out: **wafdetect-nowaf.txt**.
-* contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
+* contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. Utiliza el archivo **inputs/dirnfiles-wordlists.txt** con URLs de donde descargar los diccionarios y hacerle un merge In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.txt**
