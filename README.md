@@ -43,7 +43,7 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
 * https://github.com/sqlmapproject/sqlmap
-* https://github.com/santoru/shcheck
+* jq
 
 ## Ejecutar
 Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs. luego ejecutar los scripts de alguno de los tres modulos Recon, External y Web App.
@@ -51,7 +51,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ## Recon:
 * subdomains.py -> Genera una lista de subdominios usando amass y altdns. Utiliza el archivo **inputs/subdomains-wordlists.txt** con URLs de donde descargar los diccionarios y hacerle un merge. In: domains.txt - Out: **subdomains.txt**.
 * takeover.py -> usa dnsReaper para chequear subdomain takeover. In: **subdomains.txt** - Out: **takeover.csv**.
-* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.txt** asi como folders **httpx/screenshots** y **httpx/response**.
+* protocols.py -> usa httprobe para obtener un listado de URLs. Luego usa httpx para sacar screenshots y response. In: **subdomains.txt** - Out: **subdomains-webapp.txt** y **httpx.csv** asi como folders **httpx/screenshots** y **httpx/response**.
 
 ### Inputs:
 * domains.txt -> Listado de dominios. **El archivo debe existir dentro de la carpeta inputs.**
@@ -60,7 +60,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * subdomains.txt -> Listado de subdominios.
 * takeover.csv -> Listado de vuls de takeover.
 * subdomains-webapp.txt -> Urls.
-* httpx.txt -> Resultados de los request a los sitios vivos, su estado de respuesta.
+* httpx.csv -> Resultados de los request a los sitios vivos, su estado de respuesta.
 * httpx/screenshots ->  Captura de pantalla de los render web.
 * http/response -> Respuestas HTTP de los sitios web.x
 ---
@@ -81,15 +81,15 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. Utiliza el archivo **inputs/dirnfiles-wordlists.txt** con URLs de donde descargar los diccionarios y hacerle un merge In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
 * spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
 * vulnerabilities.py ->
-  * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.txt**
+  * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.csv**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
-  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.txt** 
+  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.csv** 
   * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
-  * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.txt**.
-  * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.txt**.
-  * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.txt**.
-  * Ejecuta header scan. In: **subdomains-webapp.txt** - Out: **secheaders.txt**.
+  * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.csv**.
+  * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.csv**.
+  * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.csv**.
+  * Ejecuta ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**.
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
@@ -99,22 +99,17 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * dirnfiles.txt -> Endpoints.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
-* nuclei.txt -> Salida de nuclei con posibles vuls.
-* retirejs.txt -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
+* nuclei.csv -> Salida de nuclei con posibles vuls.
+* retirejs.csv -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 * xssstrike.txt -> Listado de URLs vulnerables a XSS.
-* dalfox.txt -> Resultado de dalfox con posibles XSS
-* openredirect.txt -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
-* sqlmap.txt -> Resultado de inyectar en parametros GET del spidering.
-* secheaders.txt -> Indica que sitios tienen encabezados faltantes.
+* dalfox.csv -> Resultado de dalfox con posibles XSS
+* openredirect.csv -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
+* sqlmap.csv -> Resultado de inyectar en parametros GET del spidering.
+* zap.csv -> Salida de ZAP.
 
 ---
 
-## TODO:
-* Agregar ZAP o dastardly
-  * dastardly.csv -> Resultado de Dastardly, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **dastardly.csv**  https://portswigger.net/burp/documentation/dastardly/generic
-  * zap.csv -> Resultado de OWASP Zap, todos concatenados en formato CSV. In: **subdomains-webapp.txt** - Out: **zap.csv** https://www.zaproxy.org/docs/docker/baseline-scan/ y https://www.zaproxy.org/docs/docker/full-scan/
+## TODOs 
 * Migrar los txt a CSV https://www.geeksforgeeks.org/convert-json-to-csv-in-python/
 * Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
 * Agregar external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
-
-
