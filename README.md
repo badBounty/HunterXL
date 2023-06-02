@@ -66,7 +66,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ---
 
 ## External:
-* portscan.py -> Ejecuta nmap tcp custom con scripts y usa nmaptocsv para generar el resultado. In: **subdomains.txt** - Out: **ports.csv**.
+* portscanner.py -> Ejecuta nmap tcp custom con scripts y usa nmaptocsv para generar el resultado. In: **subdomains.txt** - Out: **ports.csv**.
 
 ### Inputs:
 * subdomains.txt ->  Listado de subdominios. **El archivo debe existir dentro de la carpeta outputs.**
