@@ -57,13 +57,13 @@ if(os.path.isfile(INPATH_DOMAINS)):
         if not domain:
             break
             
-        print("----------------Init amass for: " + domain.strip())
+        print("-------------Init amass-------------")
         subprocess.run(["amass","enum","-active","-d",domain.strip(),"-alts","-rf",FILPATH_RESOLVERS,"-brute","-w",FILPATH_SUBDOMAINS,"-o",OUTPATH_AMASS])
         
-        print("----------------Init altdns for: " + domain.strip())
+        print("-------------Init altdns-------------")
         subprocess.run(["altdns","-i",OUTPATH_AMASS,"-o","dataoutput.txt","-w",FILPATH_WORDS,"-r","-s",OUTPATH_ALTNDS_AUX,"-t","20"])
         
-        print("----------------Init merge for: " + domain.strip())
+        print("-------------Init merge for:" + domain.strip() +"-------------")
         os.remove("dataoutput.txt")
         os.system("cat "+OUTPATH_ALTNDS_AUX+" | awk -F: '(NR==0){h1=$1;h2=$2;next} {print $1}' > "+OUTPATH_ALTNDS)
         os.system("cat "+OUTPATH_AMASS+" >> "+OUTPATH_SUBDOMAINS_AUX)
