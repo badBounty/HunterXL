@@ -43,7 +43,9 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/lc/gau
 * https://github.com/projectdiscovery/katana
 * https://github.com/sqlmapproject/sqlmap
+* https://github.com/tomnomnom/qsreplace
 * jq
+* docker for Linux or docker.exe for WSL
 
 ## Ejecutar
 Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta denominada inputs. Todos los archivos de salida se creearan dentro de la carpeta outputs. luego ejecutar los scripts de alguno de los tres modulos Recon, External y Web App.
