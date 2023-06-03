@@ -78,10 +78,6 @@ echo "<script>alert(1)</script>" >> XSS-Jhaddix.txt
 dalfox file params.txt --waf-evasion --output dalfox.csv --format json --skip-mining-all --only-custom-payload --custom-payload ./XSS-Jhaddix.txt
 rm XSS-Jhaddix.txt
 
-#shcheck
-#echo "--------------Init shcheck"
-#shcheck.py -g -i --hfile ./"$websites" | tee secheaders.txt
-
 #borramos params
 rm params.txt
 
@@ -102,25 +98,25 @@ rm *.nik
 #ZAP
 CSVHEADERS=0
 while read subdomain; do
-	
+
 	echo "--------------Init ZAP for: $subdomain"
-	
+
 	if [[ $(cat /proc/version) == *"WSL"* ]]; then 
 		docker.exe run -v $(wslpath -w .):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t "$subdomain" -s -j -T 10 -m 5 -a -J zap.json
 	else
 	docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t "$subdomain" -s -j -T 10 -m 5 -a -J zap.json
 	fi
-	
+
 	if [ $CSVHEADERS -eq 1 ] then
 		echo "--------------Init CSV Zap"
 		python3 ../zap-converter-init.py
 		CSVHEADERS=1
 	#fi
-	
+
 	python3 ../zap-converter.py
-	
+
 	rm zap.json
-	
+
 done < ./"$websites"
 
 #Volvemos a la carpeta del repositorio
