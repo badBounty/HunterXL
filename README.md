@@ -115,7 +115,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ---
 
 ## Workflow 
-![alt tag](https://raw.githubusercontent.com/badBounty/HunterXL/master/Resources/workflow.png)
+![alt tag](https://github.com/badBounty/HunterXL/blob/main/workflow.png?raw=true)
 
 ---
 
