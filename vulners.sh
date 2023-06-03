@@ -57,7 +57,10 @@ python3 ../tools/XSStrike/xsstrike.py --seeds $1 --crawl -l 3 --skip | tee xsstr
 
 #creamos params
 echo "--------------Creating params"
-cat $2 | grep "=" | sort | uniq | tee params.txt
+cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params.txt
+while read line; do echo "^$line" >> tmp_grep.txt ; done < $1
+cat params.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
+rm tmp_grep.txt
 
 #test de SSRF y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "--------------Init openredirec test"
@@ -70,8 +73,9 @@ sqlmap --banner --batch --level=3 --results-file=sqlmap.csv -m params.txt --igno
 
 #dalfox
 echo "--------------Init dalfox"
-wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Jhaddix.txt
-dalfox file params.txt  -o dalfox.txt --format json --custom-payload ./XSS-Jhaddix.txt
+wget -nc https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Jhaddix.txt
+echo "<script>alert(1)</script>" >> XSS-Jhaddix.txt
+dalfox file params.txt --waf-evasion --output dalfox.csv --format json --skip-mining-all --only-custom-payload --custom-payload ./XSS-Jhaddix.txt
 rm XSS-Jhaddix.txt
 
 #shcheck
@@ -95,9 +99,29 @@ while read line; do nikto -maxtime 30m -host "$line" -Format csv -output ./$(cat
 cat *.nik > nikto.csv
 rm *.nik
 
+#ZAP
+CSVHEADERS=0
+while read subdomain; do
+	
+	echo "--------------Init ZAP for: $subdomain"
+	
+	if [[ $(cat /proc/version) == *"WSL"* ]]; then 
+		docker.exe run -v $(wslpath -w .):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t "$subdomain" -s -j -T 10 -m 5 -a -J zap.json
+	else
+	docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t "$subdomain" -s -j -T 10 -m 5 -a -J zap.json
+	fi
+	
+	if [ $CSVHEADERS -eq 1 ] then
+		echo "--------------Init CSV Zap"
+		python3 ../zap-converter-init.py
+		CSVHEADERS=1
+	#fi
+	
+	python3 ../zap-converter.py
+	
+	rm zap.json
+	
+done < ./"$websites"
+
 #Volvemos a la carpeta del repositorio
 cd ..
-
-
-#echo "--------------Init ZAP for:"
-#docker run -v  C:\Users\Maxi\Downloads:/zap/wrk owasp/zap2docker-stable zap-baseline.py -t https://atelierespiritual.com -s -j -T 10 -m 5 -a -J base.json
