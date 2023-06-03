@@ -8,4 +8,4 @@ VUL_NAME="vulners.sh"
 
 PINGBACK="http://pingb.in/p/78d27164f0d7b2b00ca80599dcad"
 
-subprocess.run(["sh", VUL_NAME, INPATH_WEBSUBDOMAINS, INPATH_SPIDERING, PINGBACK])
+subprocess.run(["/bin/bash", VUL_NAME, INPATH_WEBSUBDOMAINS, INPATH_SPIDERING, PINGBACK])

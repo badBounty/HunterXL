@@ -44,6 +44,9 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/projectdiscovery/katana
 * https://github.com/sqlmapproject/sqlmap
 * https://github.com/tomnomnom/qsreplace
+* https://github.com/sullo/nikto
+* https://github.com/drwetter/testssl.sh
+* https://github.com/projectdiscovery/nuclei
 * jq
 * docker for Linux or docker.exe for WSL
 
@@ -86,7 +89,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.csv**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
-  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retirejs.csv** 
+  * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retire.csv** 
   * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
   * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.csv**.
   * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.csv**.
@@ -102,12 +105,17 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
-* retirejs.csv -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
+* retire.csv -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
 * xssstrike.txt -> Listado de URLs vulnerables a XSS.
 * dalfox.csv -> Resultado de dalfox con posibles XSS
 * openredirect.csv -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
 * sqlmap.csv -> Resultado de inyectar en parametros GET del spidering.
 * zap.csv -> Salida de ZAP.
+
+---
+
+## Workflow 
+![alt tag](https://raw.githubusercontent.com/badBounty/HunterXL/master/Resources/workflow.png)
 
 ---
 
