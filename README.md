@@ -113,17 +113,14 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * zap.csv -> Salida de ZAP.
 
 ---
-
-<<<<<<< HEAD
 ## Workflow
-=======
-## Workflow 
->>>>>>> ad4520a7f468b96b8a5112acfe2db5e732c2256c
 ![alt tag](https://github.com/badBounty/HunterXL/blob/main/workflow.png?raw=true)
+
+---
+## Manual Security Checks 
+El archi **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
 
 ---
 
 ## TODOs 
-* Migrar los txt a CSV https://www.geeksforgeeks.org/convert-json-to-csv-in-python/
 * Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
-* Agregar external.py -> Ejecuta ncrack para FTP, Telnet y SSH. Para SSH ejecuta ssh-audit.py y sshUsernameEnumExploit.py. In: **ports.csv** Out: **external.txt**
