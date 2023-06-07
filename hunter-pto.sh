@@ -6,16 +6,18 @@
 #Output:
 
 #nmap.csv
-#dirnfiles.txt
 #retirejs.csv
+#testssl.csv
+#nikto.csv
+#zap.csv
+
+#Can be auth:
+#dirnfiles.txt
+#nuclei.csv
 #xsstrike.txt
 #openredirect.csv
 #sqlmap.csv
 #dalfox.csv
-#nuclei.csv
-#testssl.csv
-#nikto.csv
-#zap.csv
 
 sitio=$1
 callback=$2
