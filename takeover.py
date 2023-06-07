@@ -1,6 +1,6 @@
 import subprocess,os,json
 
-OUTPATH_DNSREAPER="outputs/takeover.csv"
+OUTPATH_DNSREAPER="outputs/takeover"
 INPATH_SUBDOMAINS="outputs/subdomains.txt"
 
 print("-------------Init dnsReaper-------------")
