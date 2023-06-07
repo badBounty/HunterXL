@@ -61,7 +61,7 @@ if(os.path.isfile(INPATH_DOMAINS)):
         subprocess.run(["amass"," enum"," -active"," -d ",domain.strip()," -alts"," -rf ",FILPATH_RESOLVERS," -brute "," -w",FILPATH_SUBDOMAINS," -o",OUTPATH_AMASS])
         
         print("----------------Init altdns for: " + domain.strip())
-        subprocess.run(["altdns"," -i ",OUTPATH_AMASS," -w ",FILPATH_WORDS," -r"," -s ",OUTPATH_ALTNDS_AUX," -t ","20"])
+        subprocess.run(["altdns"," -i ",OUTPATH_AMASS," -w ",FILPATH_WORDS," -r"," -s ",OUTPATH_ALTNDS_AUX," -t ","20", " -o ./d.txt"])
         
         print("----------------Init merge for: " + domain.strip())
         #os.remove("dataoutput.txt")
