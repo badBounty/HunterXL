@@ -12,7 +12,6 @@
 #nikto.csv
 #zap.csv
 
-
 websites=$1
 
 #La ruta principal es outputs.
@@ -33,13 +32,13 @@ while read subdomain; do
 
     while read line; do wget "$line"; done < ./js-list.txt
 
-    rm js-list.txt
+    #rm js-list.txt
 
-        echo "--------------Init retire for: $subdomain"
-        retire --outputformat json --outputpath ../"$folder".retire.txt
+	echo "--------------Init retire for: $subdomain"
+	retire --outputformat json --outputpath ../"$folder".retire.txt
 
-        cd ..
-        rm -r ./"$folder"
+	cd ..
+	#rm -r ./"$folder"
 
 done < ./"$websites"
 cat *.retire.txt > retirejs.json
@@ -53,9 +52,9 @@ python3 ../tools/XSStrike/xsstrike.py --seeds $1 --crawl -l 3 --skip | tee xsstr
 
 #creamos params
 echo "--------------Creating params"
-cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params.txt
+cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 while read line; do echo "^$line" >> tmp_grep.txt ; done < $1
-cat params.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
 rm tmp_grep.txt
 
 #test de SSRF y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
@@ -76,9 +75,6 @@ rm XSS-Jhaddix.txt
 
 python3 ../dalfox-converter.py
 rm dalfox.json
-
-#borramos params
-rm params.txt
 
 #Nuclei
 echo "--------------Init nuclei"

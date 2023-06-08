@@ -1,4 +1,5 @@
 tools/
 outputs/
+outputs.example/
 wordlists/
 inputs/domains.txt

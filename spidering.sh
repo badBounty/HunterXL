@@ -12,7 +12,7 @@ cat $1 | gau --o  gau.txt
 echo "------------Init hakrawler"
 cat $1 | hakrawler -subs | tee hakrawler.txt
 
-while read line;do echo "------------Init paramspider for: $line" && python3 ../tools/ParamSpider/paramspider.py -q --domain "$line" -o $(cat /proc/sys/kernel/random/uuid).pspider.txt --level high --placeholder FUZZ; done < $1
+while read line;do echo "------------Init paramspider for: $line" && python3 ../tools/ParamSpider/paramspider.py -q --domain "$line" -o $(cat /proc/sys/kernel/random/uuid).pspider.txt --level high; done < $1
 cd output
 cat *.pspider.txt > ../paramspider.txt
 rm  *.pspider.txt
