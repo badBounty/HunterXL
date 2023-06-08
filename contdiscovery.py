@@ -41,18 +41,18 @@ if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
 	while True:
         
         endpoint=noWafWebappsList.readline()
-		
+
         if not endpoint:
-			break
-		
+            break
+
         COMANDO="dirsearch -u " + endpoint.strip() + ' -w "$(pwd)"/' + FILPATH_DIRNFILES + " -o " + OUTPATH_DIRNFILES_AUX + " --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60"
-		
+
         print("----------------Init dirsearch for: " + endpoint.strip())
-		
+
         system(COMANDO)
-		
+
         system("cat " + OUTPATH_DIRNFILES_AUX + " >> " + OUTPATH_DIRNFILES)
-		
+
         os.remove(OUTPATH_DIRNFILES_AUX)
     
     noWafWebappsList.close()
