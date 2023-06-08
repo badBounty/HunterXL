@@ -25,14 +25,14 @@ if(not os.path.isfile(FILPATH_DIRNFILES)):
     
     while True:
         url=dirnfilesWordlists.readline()
-		
+
         if not url:
-		break
-		
+            break
+
         system("wget -nc " + url.strip() + " -O " + FILPATH_DIRNFILES_AUX)
-		
+
         system("cat "+FILPATH_DIRNFILES_AUX+" >> "+FILPATH_DIRNFILES)
-		
+
         os.remove(FILPATH_DIRNFILES_AUX)
     dirnfilesWordlists.close()
 
@@ -44,7 +44,7 @@ if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
     
         endpoint=noWafWebappsList.readline()
 
-        if not endpoint:
+        if not endpoint or endpoint == "":
             break
 
         COMANDO="dirsearch -u " + endpoint.strip() + ' -w "$(pwd)"/' + FILPATH_DIRNFILES + " -o " + OUTPATH_DIRNFILES_AUX + " --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60"
