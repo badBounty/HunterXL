@@ -157,7 +157,7 @@ echo "echo \"--------------Init zap--------------\"" >> zap-runner.sh
 if [[ $(cat /proc/version) == *"WSL"* ]]; then
     echo "docker.exe run -v \"$(wslpath -w .)\":/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J  zap.json" >> zap-runner.sh
 else
-    echo "docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json"  >> zap-runner.sh
+    echo "sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json"  >> zap-runner.sh
 fi
 
 if [ $CSVHEADERS -eq 1 ]; then

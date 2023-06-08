@@ -17,6 +17,33 @@ websites=$1
 #La ruta principal es outputs.
 cd outputs
 
+#ZAP
+CSVHEADERS=1
+touch zap-runner.sh
+while read subdomainzap; do
+        echo "echo \"--------------Init ZAP for: $subdomainzap\"" >> zap-runner.sh
+        
+		#This can be run from WSL or a real Linux
+		if [[ $(cat /proc/version) == *"WSL"* ]]; then
+			echo "docker.exe run -v \"$(wslpath -w .)\":/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J  zap.json" >> zap-runner.sh
+        else
+			echo "sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json"  >> zap-runner.sh
+        fi
+
+        if [ $CSVHEADERS -eq 1 ]; then
+			echo "echo --------------Init CSV Zap"  >> zap-runner.sh
+			echo "python3 ../zap-converter-init.py" >> zap-runner.sh
+			CSVHEADERS=0
+        fi
+		
+		echo "echo --------------Init Converter JSON To CSV for: $subdomainzap" >> zap-runner.sh
+        echo "python3 ../zap-converter.py" >> zap-runner.sh
+		echo "rm zap.json" >> zap-runner.sh		
+done < ./"$websites"
+
+sh zap-runner.sh
+rm zap-runner.sh
+
 #Buscamos vuls en archivos JS
 while read subdomain; do
 
@@ -93,30 +120,3 @@ echo "--------------Init nikto"
 while read line; do nikto -maxtime 15m -host "$line" -Format csv -output ./$(cat /proc/sys/kernel/random/uuid).nik; done < ./"$websites"
 cat *.nik > nikto.csv
 rm *.nik
-
-#ZAP
-CSVHEADERS=1
-touch zap-runner.sh
-while read subdomainzap; do
-        echo "echo \"--------------Init ZAP for: $subdomainzap\"" >> zap-runner.sh
-        
-		#This can be run from WSL or a real Linux
-		if [[ $(cat /proc/version) == *"WSL"* ]]; then
-			echo "docker.exe run -v \"$(wslpath -w .)\":/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J  zap.json" >> zap-runner.sh
-        else
-			echo "docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json"  >> zap-runner.sh
-        fi
-
-        if [ $CSVHEADERS -eq 1 ]; then
-			echo "echo --------------Init CSV Zap"  >> zap-runner.sh
-			echo "python3 ../zap-converter-init.py" >> zap-runner.sh
-			CSVHEADERS=0
-        fi
-		
-		echo "echo --------------Init Converter JSON To CSV for: $subdomainzap" >> zap-runner.sh
-        echo "python3 ../zap-converter.py" >> zap-runner.sh
-		echo "rm zap.json" >> zap-runner.sh		
-done < ./"$websites"
-
-sh zap-runner.sh
-rm zap-runner.sh
