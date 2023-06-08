@@ -37,9 +37,11 @@ if(not os.path.isfile(FILPATH_DIRNFILES)):
     dirnfilesWordlists.close()
 
 if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
-	noWafWebappsList=open(OUTPATH_WAFDETECT_NOWAF, 'r')
-	while True:
-        
+	
+    noWafWebappsList=open(OUTPATH_WAFDETECT_NOWAF, 'r')
+	
+    while True:
+    
         endpoint=noWafWebappsList.readline()
 
         if not endpoint:
