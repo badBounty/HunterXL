@@ -119,7 +119,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ---
 ## Manual Security Checks 
-El archi **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
+El archivo **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
 
 ---
 
