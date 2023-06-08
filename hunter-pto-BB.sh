@@ -23,19 +23,19 @@ extensiones=$3
 
 if [ -z "${sitio}" ]; then
     echo "No se ha enviado el parametro sitio"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" "
 	exit
 fi
 
 if [ -z "${callback}" ]; then
     echo "No se ha enviado el parametro callback"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" "
 	exit
 fi
 
 if [ -z "${extensiones}" ]; then
     echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" "
 	exit
 fi
 
@@ -53,8 +53,9 @@ python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 #dirsearch
 echo ------------Init dirsearch------------
 wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
-dirsearch "$sitio" -w "content_discovery_all.txt" -o "dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60
-rm 
+dirsearch -u "$sitio" -w "$(pwd)/content_discovery_all.txt" -o "$(pwd)/dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60
+rm content_discovery_all.txt
+
 #spidering
 
 echo "------------Init katana------------"

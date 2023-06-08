@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Run:
-	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "header=value"
+	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "Cookie: galleta=valor; galleta2=valor"
+	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "Authorization: Bearer JWT"
 
 #Output:
 	#nmap.csv
@@ -10,10 +11,10 @@
 	#nikto.csv
 	#zap.csv
 	#Auth:
-		#spidering.txt
 		#dirnfiles.txt
 		#nuclei.csv
 		#xsstrike.txt
+		#spidering.txt
 		#openredirect.csv
 		#sqlmap.csv
 		#dalfox.csv
@@ -25,26 +26,26 @@ galletas=$4
 
 if [ -z "${sitio}" ]; then
     echo "No se ha enviado el parametro sitio"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${callback}" ]; then
     echo "No se ha enviado el parametro callback"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${extensiones}" ]; then
     echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 
 if [ -z "${galletas}" ]; then
     echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
 	exit
 fi
 
@@ -62,18 +63,19 @@ python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 #dirsearch
 echo ------------Init dirsearch------------
 wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
-dirsearch "$sitio" -w "content_discovery_all.txt" -o "dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60
-rm 
+dirsearch -u "$sitio" -w "$(pwd)/content_discovery_all.txt" -o "$(pwd)/dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60 -H $galletas
+rm content_discovery_all.txt
+
 #spidering
 
 echo "------------Init katana------------"
-katana -o katana.txt -silent -js-crawl -u "$sitio"
+katana -o katana.txt -silent -js-crawl -u "$sitio" -H $galletas
 
 echo "------------Init gau------------"
 echo "$sitio" | gau --o  gau.txt
 
 echo "------------Init hakrawler"
-echo "$sitio" | hakrawler -subs | tee hakrawler.txt
+echo "$sitio" | hakrawler -subs -h $galletas | tee hakrawler.txt
 
 echo ------------"Init paramspider------------"
 python3 ../tools/ParamSpider/paramspider.py -q --domain "$sitio" -o paramspider.txt --level high
@@ -115,7 +117,7 @@ rm retirejs.json
 
 # xsstrike
 echo "------------Init xsstrike------------"
-python3 ../tools/XSStrike/xsstrike.py -u "$sitio" --crawl -l 3 --skip | tee xsstrike.txt
+python3 ../tools/XSStrike/xsstrike.py -u "$sitio" --crawl -l 3 --skip --headers $galletas | tee xsstrike.txt
 
 #creamos params
 echo "------------Creating params------------"
@@ -125,17 +127,17 @@ cat raw_params.txt | grep -E -i "$sitio" | tee params.txt
 #SSRF & open redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "------------Init openredirec test------------"
 echo "start,vulnerable,end" > openredirect.csv
-cat params.txt | qsreplace $callback | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ #print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
+cat params.txt | qsreplace $callback | sort | uniq | httpx -H $galletas -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ #print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
 
 #SqlMap
 echo "------------Init sqlmap------------"
-sqlmap --banner --batch --level=1 --results-file=sqlmap.csv -m params.txt --ignore-redirects
+sqlmap --banner --batch --level=1 --results-file=sqlmap.csv -m params.txt --ignore-redirects --headers=$galletas
 
 #dalfox
 echo "------------Init dalfox------------"
 wget -nc https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Jhaddix.txt
 echo "<script>alert(1)</script>" >> XSS-Jhaddix.txt
-dalfox file params.txt --waf-evasion --output dalfox.json --format json --skip-mining-all --only-custom-payload --custom-payload ./XSS-Jhaddix.txt
+dalfox file params.txt --waf-evasion --output dalfox.json --format json --skip-mining-all --only-custom-payload --custom-payload ./XSS-Jhaddix.txt -H $galletas
 rm XSS-Jhaddix.txt
 
 python3 ../dalfox-converter.py
@@ -143,7 +145,7 @@ rm dalfox.json
 
 #nuclei
 echo "------------Init nuclei------------"
-nuclei -u "$sitio" -j -o nuclei.json -t "$HOME/nuclei-templates"
+nuclei -u "$sitio" -j -o nuclei.json -t "$HOME/nuclei-templates" -H $galletas
 python3 ../nuclei-converter.py
 rm nuclei.json
 
