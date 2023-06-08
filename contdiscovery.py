@@ -20,14 +20,20 @@ OUTPATH_WAFDETECT_NOWAF="outputs/wafdetect-nowaf.txt"
 system("mkdir -p " + DIRPATH_WORDLISTS)
 
 if(not os.path.isfile(FILPATH_DIRNFILES)):
+
     dirnfilesWordlists=open(INPATH_DIRNFILES_WORDLISTS, 'r')
+    
     while True:
         url=dirnfilesWordlists.readline()
-		if not url:
+		
+        if not url:
 			break
-		system("wget -nc " + url.strip() + " -O " + FILPATH_DIRNFILES_AUX)
-		system("cat "+FILPATH_DIRNFILES_AUX+" >> "+FILPATH_DIRNFILES)
-		os.remove(FILPATH_DIRNFILES_AUX)
+		
+        system("wget -nc " + url.strip() + " -O " + FILPATH_DIRNFILES_AUX)
+		
+        system("cat "+FILPATH_DIRNFILES_AUX+" >> "+FILPATH_DIRNFILES)
+		
+        os.remove(FILPATH_DIRNFILES_AUX)
     dirnfilesWordlists.close()
 
 if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
