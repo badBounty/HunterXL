@@ -1,5 +1,5 @@
 # HunterXL
-##Intro
+## Intro
 Herramienta de pentest automatizada blackbox. Busca enumerar un dominio, identificar la superficie de ataque y correr unos controles basicos de seguridad para gatantizar que no haya ciertas vulnerabilidades ni malas prácticas de seguridad.
 
 ## Listado de Diccionarios:
