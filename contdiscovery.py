@@ -27,7 +27,7 @@ if(not os.path.isfile(FILPATH_DIRNFILES)):
         url=dirnfilesWordlists.readline()
 		
         if not url:
-			break
+		break
 		
         system("wget -nc " + url.strip() + " -O " + FILPATH_DIRNFILES_AUX)
 		
