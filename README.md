@@ -125,3 +125,4 @@ El archi **Manual Security Checks.xlsx** intenta sumar controles adicionales de 
 
 ## TODOs 
 * Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
+* Implementar https://github.com/mr-medi/HostPanic
