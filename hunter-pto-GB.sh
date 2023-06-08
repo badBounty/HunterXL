@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Run:
-	#hunter-pto.sh "https://www.example.com" "https://collaborator.com" "cookie=value"
+	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "header=value"
 
 #Output:
 	#nmap.csv
@@ -10,6 +10,7 @@
 	#nikto.csv
 	#zap.csv
 	#Auth:
+		#spidering.txt
 		#dirnfiles.txt
 		#nuclei.csv
 		#xsstrike.txt
@@ -19,21 +20,51 @@
 
 sitio=$1
 callback=$2
+extensiones=$3
+galletas=$4
+
+if [ -z "${sitio}" ]; then
+    echo "No se ha enviado el parametro sitio"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	exit
+fi
+
+if [ -z "${callback}" ]; then
+    echo "No se ha enviado el parametro callback"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	exit
+fi
+
+if [ -z "${extensiones}" ]; then
+    echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	exit
+fi
+
+
+if [ -z "${galletas}" ]; then
+    echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com aspx,php,asp \"galleta=valor\""
+	exit
+fi
+
+#creamos, puede fallar si existe en ese caso no nos interesa porque igual escribe ahi
+mkdir outputs
+cd outputs
 
 #nmap scan
 echo ------------Init nmap------------
-sudo nmap --top-ports 1000 --open --script vuln,default,banner,ftp-anon,ftp-bounce,ftp-syst,ssh-auth-methods,sshv1,telnet-ntlm-info,dns-cache-snoop,dns-recursion sitio -sSV -Pn -oX "./outputs/nmap.xml"
+host=$(echo $sitio | awk -F[/:] '{print $4}')
+sudo nmap --top-ports 1000 --open --script vuln,default,banner,ftp-anon,ftp-bounce,ftp-syst,ssh-auth-methods,sshv1,telnet-ntlm-info,dns-cache-snoop,dns-recursion -sSV -Pn "$host" -oA "nmap"
 
-python3 ./tools/nmaptocsv/nmaptocsv.py -S -x "./outputs/nmap.xml" -o "./outputs/nmap.csv"
-
-sudo "./outputs/nmap.xml"
+python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 
 #dirsearch
 echo ------------Init dirsearch------------
-dirsearch "$sitio" -w "TODO" -o "./outputs/dirnfiles.txt" --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60
-
+wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
+dirsearch "$sitio" -w "content_discovery_all.txt" -o "dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60
+rm 
 #spidering
-cd outputs
 
 echo "------------Init katana------------"
 katana -o katana.txt -silent -js-crawl -u "$sitio"
@@ -45,7 +76,7 @@ echo "------------Init hakrawler"
 echo "$sitio" | hakrawler -subs | tee hakrawler.txt
 
 echo ------------"Init paramspider------------"
-python3 ../tools/ParamSpider/paramspider.py -q --domain "$sitio" -o paramspider.txt --level high --placeholder FUZZ
+python3 ../tools/ParamSpider/paramspider.py -q --domain "$sitio" -o paramspider.txt --level high
 mv ./output/paramspider.txt ./paramspider.txt
 rm -r output
 
@@ -71,29 +102,27 @@ cd "$folder"
 
 while read line; do wget "$line"; done < ./js-list.txt
 
-rm js-list.txt
+#rm js-list.txt
 
 echo "-----------Init retire-----------"
 retire --outputformat json --outputpath ../retirejs.json
 
 cd ..
-rm -r ./"$folder"
+#rm -r ./"$folder"
 
 python3 ../retire-converter.py
 rm retirejs.json
 
 # xsstrike
 echo "------------Init xsstrike------------"
-python3 ../tools/XSStrike/xsstrike.py -u "sitio" --crawl -l 3 --skip | tee xsstrike.txt
+python3 ../tools/XSStrike/xsstrike.py -u "$sitio" --crawl -l 3 --skip | tee xsstrike.txt
 
 #creamos params
 echo "------------Creating params------------"
-cat "./spidering.txt" | grep "=" | sort | uniq  | qsreplace FUZZ | tee params.txt
-echo "^$sitio" >> tmp_grep.txt
-cat params.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
-rm tmp_grep.txt
+cat spidering.txt | grep "=" | sort | uniq  | qsreplace FUZZ | tee raw_params.txt
+cat raw_params.txt | grep -E -i "$sitio" | tee params.txt
 
-#SSRF&y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
+#SSRF & open redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "------------Init openredirec test------------"
 echo "start,vulnerable,end" > openredirect.csv
 cat params.txt | qsreplace $callback | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ #print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
@@ -112,18 +141,15 @@ rm XSS-Jhaddix.txt
 python3 ../dalfox-converter.py
 rm dalfox.json
 
-#borramos params, ya no se usa
-rm params.txt
-
 #nuclei
 echo "------------Init nuclei------------"
-nuclei -u "$sitios" -j -o nuclei.json -t "$HOME/nuclei-templates"
+nuclei -u "$sitio" -j -o nuclei.json -t "$HOME/nuclei-templates"
 python3 ../nuclei-converter.py
 rm nuclei.json
 
 #Testssl
 echo "--------------Init testssl--------------"
-testssl "$sitio" --csvfile testssl.csv
+testssl --csvfile testssl.csv "$sitio" 
 
 #Nikto
 echo "--------------Init nikto--------------"
