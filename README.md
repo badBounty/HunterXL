@@ -33,6 +33,7 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/punk-security/dnsReaper
 * https://github.com/GerbenJavado/LinkFinder
 * https://github.com/devanshbatham/ParamSpider
+* https://github.com/s0md3v/XSStrike
 
 ### Instalar en path:
 * https://github.com/tomnomnom/httprobe
