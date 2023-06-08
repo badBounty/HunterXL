@@ -1,4 +1,6 @@
 # HunterXL
+## Intro
+Herramienta de pentest automatizada blackbox. Busca enumerar un dominio, identificar la superficie de ataque y correr unos controles basicos de seguridad para gatantizar que no haya ciertas vulnerabilidades ni malas prácticas de seguridad.
 
 ## Listado de Diccionarios:
 Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse:
@@ -119,9 +121,10 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 
 ---
 ## Manual Security Checks 
-El archi **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
+El archivo **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
 
 ---
 
 ## TODOs 
 * Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
+* Implementar https://github.com/mr-medi/HostPanic
