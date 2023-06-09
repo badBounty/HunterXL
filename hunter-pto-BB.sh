@@ -52,7 +52,8 @@ python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 
 #dirsearch
 echo ------------Init dirsearch------------
-wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
+wget -nc https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt
+#wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
 dirsearch -u "$sitio" -w "$(pwd)/content_discovery_all.txt" -o "$(pwd)/dirnfiles.txt" --deep-recursive --force-recursive -e "zip,bak,log,xml,$extensiones" --format=csv -t 60
 rm content_discovery_all.txt
 
@@ -88,7 +89,7 @@ folder=$(echo "$sitio" |  sed -r 's/https:\/\///g'  |  sed -r 's/http:\/\///g'  
 
 mkdir "$folder"
 
-echo "$sitio" | jsfinder -read -s -o ./"$sitio"/js-list.txt
+echo "$sitio" | jsfinder -read -s -o ./"$folder"/js-list.txt
 
 cd "$folder"
 
@@ -117,7 +118,7 @@ cat raw_params.txt | grep -E -i "$sitio" | tee params.txt
 #SSRF & open redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "------------Init openredirec test------------"
 echo "start,vulnerable,end" > openredirect.csv
-cat params.txt | qsreplace $callback | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ #print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
+cat params.txt | qsreplace $callback | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
 
 #SqlMap
 echo "------------Init sqlmap------------"

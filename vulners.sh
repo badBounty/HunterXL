@@ -87,7 +87,7 @@ rm tmp_grep.txt
 #test de SSRF y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "--------------Init openredirec test"
 echo "start,vulnerable,end" > openredirect.csv
-cat params.txt | qsreplace $3 | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ #print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
+cat params.txt | qsreplace $3 | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
 
 #SqlMap
 echo "--------------Init sqlmap"
