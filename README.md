@@ -28,7 +28,7 @@ Adicionalmente pueden usarse mas de estos repositorios:
 * https://github.com/maxpowersi/MyCustomFuzzList
 
 ## Instalación:
-Se debe clonar este repositorio. Luego crear una carpeta "tools"
+Se debe clonar este repositorio. Luego crear una carpeta "tools". Existe un script **"check_tools.sh"** Puede ejecutarse para saber si las tools estan correctamente instaladas antes de ejecutar todo el flujo
 
 ### Clonar e instalar en /tools: 
 * https://github.com/maaaaz/nmaptocsv

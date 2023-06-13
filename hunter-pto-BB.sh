@@ -23,6 +23,13 @@ callback=$2
 extensiones=$3
 wafcheck=$4
 
+bash check_tools.sh
+retVal=$?
+if [ $retVal -ne 0 ]; then
+	exit $retVal
+fi
+
+#Check parameters
 if [ -z "${sitio}" ]; then
     echo "No se ha enviado el parametro sitio"
 	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" "
@@ -191,26 +198,13 @@ echo "--------------Init testssl--------------"
 testssl --csvfile testssl.csv "$sitio" 
 
 #Nikto
-#Solo para los no Waf
-if [ $WAF -eq 0 ]
-	then
-		echo "--------------Init nikto--------------"
-		nikto -maxtime 15m -host "$sitio" -Format csv -output "./nikto.csv"
-	else
-		echo "------------WAF DetectedniktoZAP skipped------------"
-fi
+echo "--------------Init nikto--------------"
+nikto -maxtime 15m -host "$sitio" -Format csv -output "./nikto.csv"
 
 #ZAP
-#Solo para los no Waf
-if [ $WAF -eq 1 ]
-	then
-		echo "--------------Init zap--------------"
-		sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
-		echo "--------------Init CSV Zap--------------"
-		python3 ../zap-converter-init.py
-		echo "--------------Init Converter JSON To CSV--------------"
-		python3 ../zap-converter.py
-	else
-		echo "------------WAF Detected ZAP skipped------------"
-		exit
-fi
+echo "--------------Init zap--------------"
+sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
+echo "--------------Init CSV Zap--------------"
+python3 ../zap-converter-init.py
+echo "--------------Init Converter JSON To CSV--------------"
+python3 ../zap-converter.py

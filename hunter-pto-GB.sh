@@ -4,7 +4,6 @@
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true/false" "Cookie: galleta=valor; galleta2=valor"
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp"  "true/false" "Authorization: Bearer JWT"
 	#hunter-pto-BB.sh "url site" "url callback" "extension" "force waf" "auth headers" 
-
 #Output:
 	#nmap.csv
 	#retirejs.csv
@@ -23,42 +22,49 @@
 sitio=$1
 callback=$2
 extensiones=$3
-forcewaf=$4
+wafcheck=$4
 galletas=$5
 
+bash check_tools.sh
+retVal=$?
+if [ $retVal -ne 0 ]; then
+	exit $retVal
+fi
+
+#Check parameters
 if [ -z "${sitio}" ]; then
     echo "No se ha enviado el parametro sitio"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${callback}" ]; then
     echo "No se ha enviado el parametro callback"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${extensiones}" ]; then
     echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${wafcheck}" ]; then
     echo "No se ha enviado el parametro waf check seleccione true o false"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" "
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
 	exit
 fi
 
 if [ -z "${galletas}" ]; then
-    echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"Cookie: galleta=valor\""
+    echo "No se ha enviado el parametro headers"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
 	exit
 fi
-
 WAF=0
+
 if [[  "$wafcheck" == "true" ]]
-	then
+then
 		out=$(wafw00f "$sitio" | grep -e 'No WAF detected' -e 'was not detected' -c)
 		if [ $out -eq 1 ]
 		then
@@ -202,26 +208,13 @@ echo "--------------Init testssl--------------"
 testssl --csvfile testssl.csv "$sitio" 
 
 #Nikto
-#Solo para los no Waf
-if [ $WAF -eq 0 ]
-	then
-		echo "--------------Init nikto--------------"
-		nikto -maxtime 15m -host "$sitio" -Format csv -output "./nikto.csv"
-	else
-		echo "------------WAF DetectedniktoZAP skipped------------"
-fi
+echo "--------------Init nikto--------------"
+nikto -maxtime 15m -host "$sitio" -Format csv -output "./nikto.csv"
 
 #ZAP
-#Solo para los no Waf
-if [ $WAF -eq 1 ]
-	then
-		echo "--------------Init zap--------------"
-		sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
-		echo "--------------Init CSV Zap--------------"
-		python3 ../zap-converter-init.py
-		echo "--------------Init Converter JSON To CSV--------------"
-		python3 ../zap-converter.py
-	else
-		echo "------------WAF Detected ZAP skipped------------"
-		exit
-fi
+echo "--------------Init zap--------------"
+sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
+echo "--------------Init CSV Zap--------------"
+python3 ../zap-converter-init.py
+echo "--------------Init Converter JSON To CSV--------------"
+python3 ../zap-converter.py

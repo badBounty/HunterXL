@@ -37,7 +37,7 @@ while read subdomainzap; do
         python3 ../zap-converter.py
 		rm zap.json	
 		
-done < ./"$nowaf"
+done < ./"$websites"
 
 
 #Buscamos vuls en archivos JS
@@ -117,6 +117,6 @@ rm https.txt
 
 #Nikto
 echo "--------------Init nikto"
-while read line; do nikto -maxtime 15m -host "$line" -Format csv -output ./$(cat /proc/sys/kernel/random/uuid).nik; done < ./"$nowaf"
+while read line; do nikto -maxtime 15m -host "$line" -Format csv -output ./$(cat /proc/sys/kernel/random/uuid).nik; done < ./"$websites"
 cat *.nik > nikto.csv
 rm *.nik
