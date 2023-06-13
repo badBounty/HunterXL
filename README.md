@@ -51,6 +51,8 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools". Existe un scri
 * https://github.com/drwetter/testssl.sh
 * https://github.com/projectdiscovery/nuclei
 * https://github.com/EnableSecurity/wafw00f
+* https://github.com/infosec-au/altdns
+* https://github.com/owasp-amass/amass
 * nmap
 * jq
 * docker for Linux or docker.exe for WSL
