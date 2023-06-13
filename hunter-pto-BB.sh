@@ -156,6 +156,7 @@ fi
 echo "------------Creating params------------"
 cat spidering.txt | grep "=" | sort | uniq  | qsreplace FUZZ | tee raw_params.txt
 cat raw_params.txt | grep -E -i "$sitio" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css|\.mp4|\.mp3|\.pdf" | tee params.txt
+rm raw_params.txt
 
 #SSRF & open redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "------------Init openredirec test------------"
