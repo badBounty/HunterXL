@@ -89,32 +89,35 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 ## Web App:
 * wafdetect.py -> detecta que posee waf con wafw00f y que no. In: **subdomains-webapp.txt** - Out: **wafdetect-nowaf.txt**.
 * contdiscovery.py -> Usa dirsearch y actualiza la lista de endpoints para los sitios web sin waf. Utiliza el archivo **inputs/dirnfiles-wordlists.txt** con URLs de donde descargar los diccionarios y hacerle un merge In: **wafdetect-nowaf.txt** - Out: **dirnfiles.txt**.
-* spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
+* spider.py -> Ejecuta gau, katana, paramspider, linkfinder, gospider y hakrawler, el resultado se filtra por sitios que no tengan WAF. In: **subdomains-webapp.txt** - Out: **linkfinder.txt** y **spidering.txt**.
 * vulnerabilities.py ->
   * Ejecuta Nuclei. In: **subdomains-webapp.txt** - Out: **nuclei.csv**
   * Ejecuta Nikto. In: **subdomains-webapp.txt** - Out: **nikto.csv**
   * Ejecuta Testssl. In: **subdomains-webapp.txt** - Out: **testssl.csv** 
   * Ejecuta jsfinder y retire. In **subdomains-webapp.txt** - Out: **retire.csv** 
-  * Ejecuta XSSstrike. In: **subdomains-webapp.txt** - Out: **xssstrike.txt**.
-  * Ejecuta Dalfox. In: **spidering.txt** - Out: **dalfox.csv**.
-  * Chequea SSRF y OpenRedirect: In: **spidering.txt** - Out: **openredirect.csv**.
-  * Ejecuta SQLmap sobre los resultados del spidering. In: **spidering.txt** - Out: **sqlmap.csv**.
   * Ejecuta ZAP. In: **subdomains-webapp.txt** - Out: **zap.csv**.
+  * Ejecuta XSSstrike. In: **wafdetect-nowaf.txt** - Out: **xssstrike.txt**.
+  * Ejecuta Dalfox. In: **wafdetect-nowaf.txt** y **spidering.txt** - Out: **dalfox.csv**.
+  * Ejecuta SQLmap sobre los resultados del spidering. In: **wafdetect-nowaf.txt** y **spidering.txt**  - Out: **sqlmap.csv**.
+  * Chequea SSRFf y OpenRedirect: In: **spidering.txt** - Out: **openredirect.csv**.
+
 
 ### Inputs:
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
 
 ### Outputs:
-* wafdetect-nowaf.txt -> Urls sin waf.
-* dirnfiles.txt -> Endpoints.
+* spidering.txt -> Salida de URLs por spidering.
+* params.txt -> Filtrado del spidering, por URLs que tengan parametros y que no tengan WAF.
+* wafdetect-nowaf.txt -> Urls sin WAF.
+* dirnfiles.txt -> Endpoints para sitios sin WAF.
 * nikto.csv -> Resultado de Nikto, todos concatenados en formato CSV.
 * testssl.csv -> Resultado de Testssl, todos concatenados en formato CSV.
 * nuclei.csv -> Salida de nuclei con posibles vuls.
 * retire.csv -> Salida de retire, donde indica las bibliotecas vulnerables encontradas del alcance.
-* xssstrike.txt -> Listado de URLs vulnerables a XSS.
-* dalfox.csv -> Resultado de dalfox con posibles XSS
+* xssstrike.txt -> Listado de URLs vulnerables a XSS **para sitios sin WAF**.
+* dalfox.csv -> Resultado de dalfox con posibles XSS **para sitios sin WAF**.
+* sqlmap.csv -> Resultado de inyectar en parametros GET del spidering **para sitios sin WAF**.
 * openredirect.csv -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
-* sqlmap.csv -> Resultado de inyectar en parametros GET del spidering.
 * zap.csv -> Salida de ZAP.
 
 ---

@@ -19,7 +19,6 @@ nowaf=$4
 cd outputs
 
 #ZAP
-#Solo para los no Waf
 CSVHEADERS=1
 touch zap-runner.sh
 while read subdomainzap; do
@@ -38,7 +37,6 @@ while read subdomainzap; do
 		rm zap.json	
 		
 done < ./"$websites"
-
 
 #Buscamos vuls en archivos JS
 while read subdomain; do
@@ -73,11 +71,11 @@ rm retirejs.json
 echo "--------------Init xsstrike"
 python3 ../tools/XSStrike/xsstrike.py --seeds "$nowaf" --crawl -l 3 --skip | tee xsstrike.txt
 
-#creamos params
-echo "--------------Creating params"
+#creamos params con todos los sitios
+echo "--------------Creating params all"
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 #filtramos por dominios en alcance y que no tengan waf
-while read line; do echo "^$line" >> tmp_grep.txt ; done < "$nowaf"
+while read line; do echo "^$line" >> tmp_grep.txt ; done < "$websites"
 cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
 rm tmp_grep.txt
 
@@ -86,6 +84,15 @@ rm tmp_grep.txt
 echo "--------------Init openredirec test"
 echo "start,vulnerable,end" > openredirect.csv
 cat params.txt | qsreplace $3 | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
+
+#Ahora creamos params con sitiow WAF
+echo "--------------Creating params no WAF"
+rm params.txt
+cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
+#filtramos por dominios en alcance y que no tengan waf
+while read line; do echo "^$line" >> tmp_grep.txt ; done < "$nowaf"
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
+rm tmp_grep.txt
 
 #SqlMap
 #Solo para los no Waf
