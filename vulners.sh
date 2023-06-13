@@ -65,7 +65,7 @@ done < ./"$websites"
 cat *.retire.txt > retirejs.json
 rm *.retire.txt
 python3 ../retire-converter.py
-rm retirejs.json
+#rm retirejs.json
 
 #ejecutamos xsstrike
 echo "--------------Init xsstrike"
@@ -110,13 +110,13 @@ dalfox file params.txt --waf-evasion --output dalfox.json --format json --skip-m
 rm XSS-Jhaddix.txt
 
 python3 ../dalfox-converter.py
-rm dalfox.json
+#rm dalfox.json
 
 #Nuclei
 echo "--------------Init nuclei"
 nuclei -l ./"$websites" -j -o nuclei.json -t "$HOME/nuclei-templates"
 python3 ../nuclei-converter.py
-rm nuclei.json
+#rm nuclei.json
 
 #Testssl
 echo "--------------Init testssl"

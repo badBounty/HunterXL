@@ -119,10 +119,10 @@ rm -r output
 #unificar resultados del spidering
 cat katana.txt hakrawler.txt gau.txt paramspider.txt | tee spider.txt
 sort spider.txt | uniq | tee spidering.txt
-rm gau.txt
-rm hakrawler.txt
-rm katana.txt
-rm paramspider.txt
+#rm gau.txt
+#rm hakrawler.txt
+#rm katana.txt
+#rm paramspider.txt
 rm spider.txt
 
 #jsfinder
@@ -147,7 +147,7 @@ cd ..
 #rm -r ./"$folder"
 
 python3 ../retire-converter.py
-rm retirejs.json
+#rm retirejs.json
 
 #xsstrike
 #Solo para los no Waf
@@ -196,13 +196,13 @@ if [ $WAF -eq 0 ]
 fi
 
 python3 ../dalfox-converter.py
-rm dalfox.json
+#rm dalfox.json
 
 #nuclei
 echo "------------Init nuclei------------"
 nuclei -u "$sitio" -j -o nuclei.json -t "$HOME/nuclei-templates" -H "$galletas"
 python3 ../nuclei-converter.py
-rm nuclei.json
+#rm nuclei.json
 
 #Testssl
 echo "--------------Init testssl--------------"

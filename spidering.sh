@@ -20,10 +20,10 @@ cd ..
 
 cat katana.txt hakrawler.txt gau.txt paramspider.txt | tee spider.txt
 sort spider.txt | uniq | tee spidering.txt
-rm gau.txt
-rm hakrawler.txt
-rm katana.txt
-rm paramspider.txt
+#rm gau.txt
+#rm hakrawler.txt
+#rm katana.txt
+#rm paramspider.txt
 rm spider.txt
 
 while read line;do python3 ../tools/LinkFinder/linkfinder.py -i "$line"  -d -o cli | tee $(cat /proc/sys/kernel/random/uuid).linkf.txt; done < $1

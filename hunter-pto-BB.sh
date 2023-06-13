@@ -112,10 +112,10 @@ rm -r output
 #unificar resultados del spidering
 cat katana.txt hakrawler.txt gau.txt paramspider.txt | tee spider.txt
 sort spider.txt | uniq | tee spidering.txt
-rm gau.txt
-rm hakrawler.txt
-rm katana.txt
-rm paramspider.txt
+#rm gau.txt
+#rm hakrawler.txt
+#rm katana.txt
+#rm paramspider.txt
 rm spider.txt
 
 #jsfinder
@@ -140,7 +140,7 @@ cd ..
 #rm -r ./"$folder"
 
 python3 ../retire-converter.py
-rm retirejs.json
+#rm retirejs.json
 
 # xsstrike
 #Solo para los no Waf
@@ -183,7 +183,7 @@ if [ $WAF -eq 0 ]
 		dalfox file params.txt --waf-evasion --output dalfox.json --format json --skip-mining-all --only-custom-payload --custom-payload ./XSS-Jhaddix.txt
 		rm XSS-Jhaddix.txt
 		python3 ../dalfox-converter.py
-		rm dalfox.json
+		#rm dalfox.json
 	else
 		echo "------------WAF Detected dalfox skipped------------"
 fi
@@ -192,7 +192,7 @@ fi
 echo "------------Init nuclei------------"
 nuclei -u "$sitio" -j -o nuclei.json -t "$HOME/nuclei-templates"
 python3 ../nuclei-converter.py
-rm nuclei.json
+#rm nuclei.json
 
 #Testssl
 echo "--------------Init testssl--------------"
