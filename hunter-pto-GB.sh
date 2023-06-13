@@ -3,7 +3,7 @@
 #Run:
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true/false" "Cookie: galleta=valor; galleta2=valor"
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp"  "true/false" "Authorization: Bearer JWT"
-	#hunter-pto-BB.sh "url site" "url callback" "extension" "force waf" "auth headers"
+	#hunter-pto-BB.sh "url site" "url callback" "extension" "force waf" "auth headers" 
 
 #Output:
 	#nmap.csv

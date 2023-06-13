@@ -2,7 +2,7 @@
 
 #Run:
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true"
-	#hunter-pto-BB.sh "url site" "url callback" "extension" "waf check"
+	#hunter-pto-BB.sh "url site" "url callback" "extension" "waf check" 
 
 #Output:
 	#nmap.csv
