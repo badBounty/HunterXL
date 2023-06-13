@@ -76,7 +76,7 @@ echo "--------------Creating params all"
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 #filtramos por dominios en alcance y que no tengan waf
 while read line; do echo "^$line" >> tmp_grep.txt ; done < "$websites"
-cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css" | tee params.txt
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css|\.mp4|\.mp3|\.pdf" | tee params.txt
 rm tmp_grep.txt
 rm params_raw.txt
 
@@ -92,7 +92,7 @@ rm params.txt
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 #filtramos por dominios en alcance y que no tengan waf
 while read line; do echo "^$line" >> tmp_grep.txt ; done < "$nowaf"
-cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css" | tee params.txt
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css|\.mp4|\.mp3|\.pdf" | tee params.txt
 rm tmp_grep.txt
 rm params_raw.txt
 
