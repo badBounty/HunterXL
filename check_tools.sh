@@ -119,6 +119,20 @@ then
 else
 	echo "docker found"
 fi
+if ! command -v amass &> /dev/null
+then
+    echo "${RED}amass could not be found${NC}"
+    exit 100
+else
+	echo "amass found"
+fi
+if ! command -v altdns &> /dev/null
+then
+    echo "${RED}altdns could not be found${NC}"
+    exit 100
+else
+	echo "altdns found"
+fi
 
 if test -f "tools/XSStrike/xsstrike.py"
 then
