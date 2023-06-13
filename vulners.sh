@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#vulners.sh  subdomains-webapp.txt spidering.txt http://pingb.in/p/03e8fef1e7d875c304b342e0b02
+#vulners.sh  subdomains-webapp.txt spidering.txt http://pingb.in/p/03e8fef1e7d875c304b342e0b02 wafdetect-nowaf
 #->
 #retirejs.csv
 #xsstrike.txt
@@ -13,36 +13,32 @@
 #zap.csv
 
 websites=$1
+nowaf=$4
 
 #La ruta principal es outputs.
 cd outputs
 
 #ZAP
+#Solo para los no Waf
 CSVHEADERS=1
 touch zap-runner.sh
 while read subdomainzap; do
-        echo "echo \"--------------Init ZAP for: $subdomainzap\"" >> zap-runner.sh
+        echo "--------------Init ZAP for: $subdomainzap"
         
-		#This can be run from WSL or a real Linux
-		if [[ $(cat /proc/version) == *"WSL"* ]]; then
-			echo "docker.exe run -v \"$(wslpath -w .)\":/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J  zap.json" >> zap-runner.sh
-        else
-			echo "sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json"  >> zap-runner.sh
-        fi
+		sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json
 
         if [ $CSVHEADERS -eq 1 ]; then
-			echo "echo --------------Init CSV Zap"  >> zap-runner.sh
-			echo "python3 ../zap-converter-init.py" >> zap-runner.sh
+			echo "--------------Init CSV Zap"
+			python3 ../zap-converter-init.py
 			CSVHEADERS=0
         fi
 		
-		echo "echo --------------Init Converter JSON To CSV for: $subdomainzap" >> zap-runner.sh
-        echo "python3 ../zap-converter.py" >> zap-runner.sh
-		echo "rm zap.json" >> zap-runner.sh		
-done < ./"$websites"
+		echo "--------------Init Converter JSON To CSV for: $subdomainzap"
+        python3 ../zap-converter.py
+		rm zap.json	
+		
+done < ./"$nowaf"
 
-sh zap-runner.sh
-rm zap-runner.sh
 
 #Buscamos vuls en archivos JS
 while read subdomain; do
@@ -75,25 +71,29 @@ rm retirejs.json
 
 #ejecutamos xsstrike
 echo "--------------Init xsstrike"
-python3 ../tools/XSStrike/xsstrike.py --seeds $1 --crawl -l 3 --skip | tee xsstrike.txt
+python3 ../tools/XSStrike/xsstrike.py --seeds "$nowaf" --crawl -l 3 --skip | tee xsstrike.txt
 
 #creamos params
 echo "--------------Creating params"
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
-while read line; do echo "^$line" >> tmp_grep.txt ; done < $1
+#filtramos por dominios en alcance y que no tengan waf
+while read line; do echo "^$line" >> tmp_grep.txt ; done < "$nowaf"
 cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
 rm tmp_grep.txt
 
 #test de SSRF y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
+#Solo para los no Waf
 echo "--------------Init openredirec test"
 echo "start,vulnerable,end" > openredirect.csv
 cat params.txt | qsreplace $3 | sort | uniq | httpx -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
 
 #SqlMap
+#Solo para los no Waf
 echo "--------------Init sqlmap"
 sqlmap --banner --batch --level=1 --results-file=sqlmap.csv -m params.txt --ignore-redirects
 
 #dalfox
+#Solo para los no Waf
 echo "--------------Init dalfox"
 wget -nc https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Jhaddix.txt
 echo "<script>alert(1)</script>" >> XSS-Jhaddix.txt
@@ -117,6 +117,6 @@ rm https.txt
 
 #Nikto
 echo "--------------Init nikto"
-while read line; do nikto -maxtime 15m -host "$line" -Format csv -output ./$(cat /proc/sys/kernel/random/uuid).nik; done < ./"$websites"
+while read line; do nikto -maxtime 15m -host "$line" -Format csv -output ./$(cat /proc/sys/kernel/random/uuid).nik; done < ./"$nowaf"
 cat *.nik > nikto.csv
 rm *.nik

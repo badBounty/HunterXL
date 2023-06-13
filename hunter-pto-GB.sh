@@ -84,6 +84,7 @@ sudo nmap --top-ports 1000 --open --script vuln,default,banner,ftp-anon,ftp-boun
 python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 
 #dirsearch
+#Solo para los no Waf
 if [ $WAF -eq 0 ]
 	then
 		echo "------------Init dirsearch------------"
@@ -142,7 +143,8 @@ cd ..
 python3 ../retire-converter.py
 rm retirejs.json
 
-# xsstrike
+#xsstrike
+#Solo para los no Waf
 if [ $WAF -eq 0 ]
 	then
 		echo "------------Init xsstrike------------"
@@ -162,6 +164,7 @@ echo "start,vulnerable,end" > openredirect.csv
 cat params.txt | qsreplace $callback | sort | uniq | httpx -H "$galletas" -silent -status-code -location -json -fr | jq -r '. | .url + "," + .final_url' | awk -F, '{ print $1==$2?$1 "," $2 ",SI": $1 "," $2 ",NO" }' | grep "SI" >> openredirect.csv
 
 #SqlMap
+#Solo para los no Waf
 if [ $WAF -eq 0 ]
 	then
 		echo "------------Init sqlmap------------"
@@ -171,6 +174,7 @@ if [ $WAF -eq 0 ]
 fi
 
 #dalfox
+#Solo para los no Waf
 if [ $WAF -eq 0 ]
 	then
 		echo "------------Init dalfox------------"
@@ -198,6 +202,7 @@ echo "--------------Init testssl--------------"
 testssl --csvfile testssl.csv "$sitio" 
 
 #Nikto
+#Solo para los no Waf
 if [ $WAF -eq 0 ]
 	then
 		echo "--------------Init nikto--------------"
@@ -207,6 +212,7 @@ if [ $WAF -eq 0 ]
 fi
 
 #ZAP
+#Solo para los no Waf
 if [ $WAF -eq 1 ]
 	then
 		echo "--------------Init zap--------------"
