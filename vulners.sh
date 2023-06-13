@@ -76,8 +76,9 @@ echo "--------------Creating params all"
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 #filtramos por dominios en alcance y que no tengan waf
 while read line; do echo "^$line" >> tmp_grep.txt ; done < "$websites"
-cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css" | tee params.txt
 rm tmp_grep.txt
+rm params_raw.txt
 
 #test de SSRF y Open Redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 #Solo para los no Waf
@@ -91,8 +92,9 @@ rm params.txt
 cat $2 | grep "=" | sort | uniq  | qsreplace FUZZ | tee params_raw.txt
 #filtramos por dominios en alcance y que no tengan waf
 while read line; do echo "^$line" >> tmp_grep.txt ; done < "$nowaf"
-cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | tee params.txt
+cat params_raw.txt | grep -E -i "^$(paste -s -d "|" tmp_grep.txt)" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css" | tee params.txt
 rm tmp_grep.txt
+rm params_raw.txt
 
 #SqlMap
 #Solo para los no Waf

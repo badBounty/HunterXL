@@ -155,7 +155,7 @@ fi
 #creamos params
 echo "------------Creating params------------"
 cat spidering.txt | grep "=" | sort | uniq  | qsreplace FUZZ | tee raw_params.txt
-cat raw_params.txt | grep -E -i "$sitio" | tee params.txt
+cat raw_params.txt | grep -E -i "$sitio" | grep -v -E "\.png|\.jpg|\.jpeg|\.gif|\.js|\.woff|\.svg|\.ttf|\.css" | tee params.txt
 
 #SSRF & open redirect. Check the blind payload to test SSRF. Check the file openredirect.txt to check vuls.
 echo "------------Init openredirec test------------"
