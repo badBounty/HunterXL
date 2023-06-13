@@ -50,6 +50,7 @@ Se debe clonar este repositorio. Luego crear una carpeta "tools"
 * https://github.com/sullo/nikto
 * https://github.com/drwetter/testssl.sh
 * https://github.com/projectdiscovery/nuclei
+* https://github.com/EnableSecurity/wafw00f
 * jq
 * docker for Linux or docker.exe for WSL
 
