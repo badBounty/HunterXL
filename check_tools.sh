@@ -105,6 +105,13 @@ then
 else
 	echo "wafw00f found"
 fi
+if ! command -v dirsearch &> /dev/null
+then
+    echo "${RED}dirsearch could not be found${NC}"
+    exit 100
+else
+	echo "dirsearch found"
+fi
 if ! command -v jq &> /dev/null
 then
     echo "${RED}jq could not be found${NC}"
