@@ -131,6 +131,28 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 El archivo **Manual Security Checks.xlsx** intenta sumar controles adicionales de un baseline de seguridad que no es cubierto por esta herramienta. Se recomienda realizar dichos checks de forma manual para que en conjunto con el Hunter XL se pueda garantizar un buen baseline de seguridad.
 
 ---
+## Stand Alone
+Existe una version para correr el HunterXL con un script para un unico sitio. Los archivos son hunter-pto-BB.sh para modo sin cookies y hunter-pto-GB.sh para modo autenticado
+```
+bash hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true" "folder_title"
+bashhunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true/false" "folder_title" "Cookie: galleta=valor; galleta2=valor"
+bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true/false" "folder_title" "Authorization: Bearer JWT"
+```
+Este script dará como salida en la carpeta folder_title los siguientes archivos de interes:
+
+* spidering.txt -> Salida de URLs por spidering.
+* dirnfiles.txt -> Endpoints.
+* nikto.csv -> Resultado de Nikto.
+* testssl.csv -> Resultado de Testssl.
+* nuclei.csv -> Salida de nuclei.
+* retire.csv -> Salida de retire.
+* xssstrike.txt -> Listado de URLs vulnerables a XSS usando el resultado de spidering.
+* dalfox.csv -> Resultado de dalfox con posibles XSS usando el resultado de spidering.
+* sqlmap.csv -> Resultado de inyectar en parametros usando el resultado de spidering.
+* openredirect.csv -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
+* zap.csv -> Salida de ZAP.
+
+---
 
 ## TODOs 
 * Agregar aws.py -> Enumerar s3 y automatizar otros checks de AWS.
