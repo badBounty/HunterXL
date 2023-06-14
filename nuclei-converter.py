@@ -14,35 +14,35 @@ for line in json_file:
         headers = True
     
     data = json.loads(line) 
-    csv_file.write("\"" + data['host'] + "\"")
+    csv_file.write(data['host'])
     csv_file.write(",")
     
-    csv_file.write("\"" + data['template'] + "\"")
+    csv_file.write(data['template'])
     csv_file.write(",")
     
     csv_file.write("\"" + data['info']['name'] + "\"")
     csv_file.write(",")
     
     if "description" in data['info']:
-       csv_file.write("\"" + data['info']['description'] + "\"")
+       csv_file.write("\"" + data['info']['description'].replace(",", " ") + "\"")
     else:
        csv_file.write("N/A")
     csv_file.write(",")
     
-    csv_file.write("\"" + data['info']['severity'] + "\"")
+    csv_file.write(data['info']['severity'])
     csv_file.write(",")
    
     if "extracted-results" in data:
-         csv_file.write("\"" + json.dumps(data['extracted-results']) + "\"")
+         csv_file.write("\"" + json.dumps(data['extracted-results']).replace(",", " ") + "\"")
     else:
         csv_file.write("N/A")
     csv_file.write(",")
     
-    csv_file.write("\"" + data['matched-at'])    
+    csv_file.write("\"" + data['matched-at'].replace(",", " "))    
     csv_file.write(",")
     
     if "curl-command" in data:
-        csv_file.write("\"" + data['curl-command'] + "\"")
+        csv_file.write("\"" + data['curl-command'].replace(",", " ") + "\"")
     else:
         csv_file.write("N/A")
     csv_file.write("\n")
