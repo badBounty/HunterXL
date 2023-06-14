@@ -132,11 +132,17 @@ El archivo **Manual Security Checks.xlsx** intenta sumar controles adicionales d
 
 ---
 ## Stand Alone
-Existe una version para correr el HunterXL con un script para un unico sitio. Los archivos son hunter-pto-BB.sh para modo sin cookies y hunter-pto-GB.sh para modo autenticado
+Existe una version para correr el HunterXL con un script para un unico sitio. Los archivos son hunter-pto-BB.sh para modo sin cookies y hunter-pto-GB.sh para modo autenticado. Los párametros a utilizar son:
+* 1: URL Target.
+* 2: URL de collaborator o pingb.in para tener callback por posibles SSRF y para testerar OpenRedirect.
+* 3: Extensiones para usar con dirsearch
+* 4: Bool, donde true indica chequear si hay WAF, y en caso que haya, no se hacen pruebas de XSS y SQLi. En caso de ser false, no se comprueba y se hacen las pruebas.
+* 5: (Solo para GB) Indica encabezado HTTP de autenticación, pueden ser cookies o encabezados.
+Se pueden utilizar los siguietnes ejemplos:
 ```
 bash hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true" "folder_title"
-bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true/false" "folder_title" "Cookie: galleta=valor; galleta2=valor"
-bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true/false" "folder_title" "Authorization: Bearer JWT"
+bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "false" "folder_title" "Cookie: galleta=valor; galleta2=valor"
+bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,php" "true" "folder_title" "Authorization: Bearer JWT"
 ```
 Este script dará como salida en la carpeta folder_title los siguientes archivos de interes:
 
