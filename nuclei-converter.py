@@ -38,7 +38,7 @@ for line in json_file:
         csv_file.write("N/A")
     csv_file.write(",")
     
-    csv_file.write("\"" + data['matched-at'].replace(",", " "))    
+    csv_file.write("\"" + data['matched-at'].replace(",", " ") + "\"")    
     csv_file.write(",")
     
     if "curl-command" in data:
