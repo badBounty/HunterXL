@@ -57,7 +57,7 @@ fi
 
 if [ -z "${projecto}" ]; then
     echo "No se ha enviado el parametro projet_title"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\""
 	exit
 fi
 
