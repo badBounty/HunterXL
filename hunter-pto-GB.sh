@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Run:
-	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true/false" "Cookie: galleta=valor; galleta2=valor"
-	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp"  "true/false" "Authorization: Bearer JWT"
-	#hunter-pto-BB.sh "url site" "url callback" "extension" "force waf" "auth headers" 
+	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true/false" "project_title" "Cookie: galleta=valor; galleta2=valor"
+	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp"  "true/false" "project_title" "Authorization: Bearer JWT"
+	#hunter-pto-BB.sh "url site" "url callback" "extension" "chekc waf" "project_title" "auth headers" 
 #Output:
 	#nmap.csv
 	#retirejs.csv
@@ -53,6 +53,12 @@ fi
 
 if [ -z "${wafcheck}" ]; then
     echo "No se ha enviado el parametro waf check seleccione true o false"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
+	exit
+fi
+
+if [ -z "${projecto}" ]; then
+    echo "No se ha enviado el parametro projet_title"
 	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi

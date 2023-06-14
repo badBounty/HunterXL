@@ -2,7 +2,7 @@
 
 #Run:
 	#hunter-pto-BB.sh "https://www.example.com" "https://collaborator.com" "aspx,php,asp" "true" "title"
-	#hunter-pto-BB.sh "url site" "url callback" "extension" "waf check" "project_title"
+	#hunter-pto-BB.sh "url site" "url callback" "extension" "chekc WAF" "project_title"
 
 #Output:
 	#nmap.csv
@@ -52,6 +52,12 @@ fi
 if [ -z "${wafcheck}" ]; then
     echo "No se ha enviado el parametro waf check seleccione true o false"
 	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\""
+	exit
+fi
+
+if [ -z "${projecto}" ]; then
+    echo "No se ha enviado el parametro projet_title"
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 
