@@ -23,7 +23,8 @@ sitio=$1
 callback=$2
 extensiones=$3
 wafcheck=$4
-galletas=$5
+projecto=$5
+galletas=$6
 
 bash check_tools.sh
 retVal=$?
@@ -34,31 +35,31 @@ fi
 #Check parameters
 if [ -z "${sitio}" ]; then
     echo "No se ha enviado el parametro sitio"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 
 if [ -z "${callback}" ]; then
     echo "No se ha enviado el parametro callback"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 
 if [ -z "${extensiones}" ]; then
     echo "No se ha enviado el parametro extensiones, las extensiones por defecto incluidas son zip,bak,log,xml"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 
 if [ -z "${wafcheck}" ]; then
     echo "No se ha enviado el parametro waf check seleccione true o false"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 
 if [ -z "${galletas}" ]; then
     echo "No se ha enviado el parametro headers"
-	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"Cookie: galleta=valor\""
+	echo "Usage: hunter-pto-BB.sh https://www.example.com https://collaborator.com \"aspx,php,asp\" \"true\" \"project_title\" \"Cookie: galleta=valor\" "
 	exit
 fi
 WAF=0
@@ -79,8 +80,9 @@ else
 fi
 
 #creamos, puede fallar si existe en ese caso no nos interesa porque igual escribe ahi
-mkdir outputs
-cd outputs
+mkdir "$projecto"
+chmod +x "$projecto"
+cd "$projecto"
 
 #nmap scan
 echo ------------Init nmap------------
