@@ -79,7 +79,7 @@ fi
 
 #creamos, puede fallar si existe en ese caso no nos interesa porque igual escribe ahi
 mkdir "$projecto"
-chmod +x "$projecto"
+chmod 777 "$projecto"
 cd "$projecto"
 
 #nmap scan
