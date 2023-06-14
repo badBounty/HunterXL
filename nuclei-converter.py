@@ -33,7 +33,7 @@ for line in json_file:
     csv_file.write(",")
    
     if "extracted-results" in data:
-         csv_file.write("\"" + json.dumps(data['extracted-results']).replace(",", " ") + "\"")
+         csv_file.write(json.dumps(data['extracted-results']).replace(",", " "))
     else:
         csv_file.write("N/A")
     csv_file.write(",")
