@@ -158,6 +158,7 @@ Este script dará como salida en la carpeta folder_title los siguientes archivos
 * openredirect.csv -> Listado de URLs vulnerbales a Open Redirect usando el resultado de spidering.
 * zap.csv -> Salida de ZAP.
 
+Tener en cuenta que la lista que se usa con dirsearch esta puesta en el script, si se quiera cambiar hay que modificar el script para q descargue la lista deseada.
 ---
 
 ## TODOs 
