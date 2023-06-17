@@ -87,7 +87,6 @@ fi
 
 #creamos, puede fallar si existe en ese caso no nos interesa porque igual escribe ahi
 mkdir "$projecto"
-chmod 777 "$projecto"
 cd "$projecto"
 
 #nmap scan
@@ -222,7 +221,7 @@ nikto -maxtime 15m -host "$sitio" -Format csv -output "./nikto.csv"
 
 #ZAP
 echo "--------------Init zap--------------"
-sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
+sudo docker run -v $(pwd):/zap/wrk:rw --user root owasp/zap2docker-stable zap-baseline.py -t $sitio -s -j -T 10 -m 5 -a -J zap.json
 echo "--------------Init CSV Zap--------------"
 python3 ../zap-converter-init.py
 echo "--------------Init Converter JSON To CSV--------------"
