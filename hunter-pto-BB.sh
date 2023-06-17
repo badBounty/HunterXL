@@ -127,7 +127,7 @@ rm spider.txt
 #jsfinder
 echo "--------------Init jsfinder------------"
 
-folder=$(echo "$sitio" |  sed -r 's/https:\/\///g'  |  sed -r 's/http:\/\///g'  |  sed -r 's/HTTPS:\/\///g'  |  sed -r 's/HTTP:\/\///g')
+folder=$(uuidgen)
 
 mkdir "$folder"
 
