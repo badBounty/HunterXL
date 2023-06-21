@@ -26,6 +26,6 @@ sort spider.txt | uniq | tee spidering.txt
 #rm paramspider.txt
 rm spider.txt
 
-while read line;do python3 ../tools/LinkFinder/linkfinder.py -i "$line"  -d -o cli | tee $(cat /proc/sys/kernel/random/uuid).linkf.txt; done < $1
-cat *.linkf.txt > linkfinder.txt
-rm  *.linkf.txt
+#while read line;do python3 ../tools/LinkFinder/linkfinder.py -i "$line"  -d -o cli | tee $(cat /proc/sys/kernel/random/uuid).linkf.txt; done < $1
+#cat *.linkf.txt > linkfinder.txt
+#rm  *.linkf.txt
