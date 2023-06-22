@@ -24,7 +24,7 @@ touch zap-runner.sh
 while read subdomainzap; do
         echo "--------------Init ZAP for: $subdomainzap"
         
-		sudo docker run -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json
+		sudo docker run --rm -v $(pwd):/zap/wrk owasp/zap2docker-stable zap-baseline.py -t $subdomainzap -s -j -T 10 -m 5 -a -J zap.json
 
         if [ $CSVHEADERS -eq 1 ]; then
 			echo "--------------Init CSV Zap"
