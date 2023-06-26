@@ -108,7 +108,7 @@ Posicionarse en la carpeta HunterXL. Esta carpeta debe contener una carpeta deno
 * subdomains-webapp.txt -> Urls. **El archivo debe existir dentro de la carpeta outputs.**
 
 ### Outputs:
-* ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.
+* spidering.txt -> Salida de URLs por spidering.
 * params.txt -> Filtrado del spidering, por URLs que tengan parametros y que no tengan WAF.
 * wafdetect-nowaf.txt -> Urls sin WAF.
 * dirnfiles.txt -> Endpoints para sitios sin WAF.
@@ -146,7 +146,7 @@ bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,
 ```
 Este script dará como salida en la carpeta folder_title los siguientes archivos de interes:
 
-* spidering.txt -> Salida de URLs por spidering.
+* ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.
 * dirnfiles.txt -> Endpoints.
 * nikto.csv -> Resultado de Nikto.
 * testssl.csv -> Resultado de Testssl.
