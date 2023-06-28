@@ -146,7 +146,7 @@ bash hunter-pto-GB.sh "https://www.example.com" "https://collaborator.com" "bak,
 ```
 Este script dará como salida en la carpeta folder_title los siguientes archivos de interes:
 
-* spidering.txt -> Salida de URLs por spidering.
+* ports.csv -> Resultado de nmap tcp con IPs puertos abuertos y los resultados de los scripts de nmap.
 * dirnfiles.txt -> Endpoints.
 * nikto.csv -> Resultado de Nikto.
 * testssl.csv -> Resultado de Testssl.
