@@ -47,7 +47,7 @@ if(os.path.isfile(OUTPATH_WAFDETECT_NOWAF)):
         if not endpoint or endpoint == "":
             break
 
-        COMANDO="dirsearch -u " + endpoint.strip() + ' -w "$(pwd)"/' + FILPATH_DIRNFILES + " -o " + OUTPATH_DIRNFILES_AUX + " --deep-recursive --force-recursive -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60"
+        COMANDO="dirsearch -u " + endpoint.strip() + ' -w "$(pwd)"/' + FILPATH_DIRNFILES + " -o " + OUTPATH_DIRNFILES_AUX + " --force-extensions -e zip,bak,old,php,jsp,asp,aspx,txt,html,sql,js,log,xml,sh --format=csv -t 60"
 
         print("----------------Init dirsearch for: " + endpoint.strip())
 
