@@ -3,6 +3,14 @@
 RED=$'\e[0;31m'
 NC=$'\e[0m'
 
+if ! command -v uuidgen &> /dev/null
+then
+    echo "${RED}uuidgen could not be found${NC}"
+    exit 100
+else
+	echo "uuidgen found"
+fi
+
 if ! command -v nmap &> /dev/null
 then
     echo "${RED}nmap could not be found${NC}"
