@@ -90,15 +90,15 @@ python3 ../tools/nmaptocsv/nmaptocsv.py -S -x "nmap.xml" -o "nmap.csv"
 
 #dirsearch
 #Solo para los no Waf
-if [ $WAF -eq 0 ]
-	then
-		echo "------------Init dirsearch------------"
-		wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
-		dirsearch -u "$sitio" -w "$(pwd)/content_discovery_all.txt" -o "$(pwd)/dirnfiles.txt" --force-extensions -e "log,xml,$extensiones" --format=csv -t 60
-		rm content_discovery_all.txt
-	else
-		echo "------------WAF Detected dirsearch skipped------------"
-fi
+#if [ $WAF -eq 0 ]
+#	then
+#		echo "------------Init dirsearch------------"
+#		wget -nc https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
+#		dirsearch -u "$sitio" -w "$(pwd)/content_discovery_all.txt" -o "$(pwd)/dirnfiles.txt" --force-extensions -e "log,xml,$extensiones" --format=csv -t 60
+#		rm content_discovery_all.txt
+#	else
+#		echo "------------WAF Detected dirsearch skipped------------"
+#fi
 
 #spidering
 echo "------------Init katana------------"
