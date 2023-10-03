@@ -1,1 +1,4 @@
+https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/sortedcombined-knock-dnsrecon-fierce-reconng.txt
+https://gist.githubusercontent.com/jhaddix/f64c97d0863a78454e44c2f7119c2a6a/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/discovery/dns/dnsmapCommonSubdomains.txt
+https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/master/discovery/dns/alexaTop1mAXFRcommonSubdomains.txt

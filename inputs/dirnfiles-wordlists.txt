@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt

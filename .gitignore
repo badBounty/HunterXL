@@ -4,3 +4,5 @@ outputs.example/
 wordlists/
 inputs/domains.txt
 dataoutput.txt
+inputs/dirnfiles-wordlists.txt
+inputs/subdomains-wordlists.txt
