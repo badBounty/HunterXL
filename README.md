@@ -3,10 +3,9 @@
 Herramienta de pentest automatizada blackbox. Busca enumerar un dominio, identificar la superficie de ataque y correr unos controles basicos de seguridad para gatantizar que no haya ciertas vulnerabilidades ni malas prácticas de seguridad.
 
 ## Listado de Diccionarios:
-Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse:
+Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse, ver la carpeta fuzzing para mas información:
 * subdomains-wordlists.txt: Indica URLs de donde descargar los diccionarios para enumerar subdominios por fuerza bruta.
-* dirnfiles-wordlists.txt: Indica URLs de donde descargar los diccionarios para hacer content discovery.  
-Ver la carpeta fuzzing para mas información.
+* dirnfiles-wordlists.txt: Indica URLs de donde descargar los diccionarios para hacer content discovery.
 
 ## Instalación:
 Se debe clonar este repositorio. Luego crear una carpeta "tools". Existe un script **"check_tools.sh"** Puede ejecutarse para saber si las tools estan correctamente instaladas antes de ejecutar todo el flujo.
