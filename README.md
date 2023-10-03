@@ -5,7 +5,7 @@ Herramienta de pentest automatizada blackbox. Busca enumerar un dominio, identif
 ## Listado de Diccionarios:
 Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse:
 * subdomains-wordlists.txt: Indica URLs de donde descargar los diccionarios para enumerar subdominios por fuerza bruta.
-* dirnfiles-wordlists.txt: Indica URLs de donde descargar los diccionarios para hacer content discovery.
+* dirnfiles-wordlists.txt: Indica URLs de donde descargar los diccionarios para hacer content discovery.  
 Ver la carpeta fuzzing para mas información.
 
 ## Instalación:
