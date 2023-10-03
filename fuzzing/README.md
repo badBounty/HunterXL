@@ -3,7 +3,6 @@
 Repositorio de archivos txt de fuzzing y content discovery
 
 ## Listado de Diccionarios:
-Existen 2 archivos en la carpeta inputs que definen los diccionarios a utilizarse:
 * Diccionarios de subdominios y permutaciones:
   * https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/sortedcombined-knock-dnsrecon-fierce-reconng.txt
   * https://gist.githubusercontent.com/jhaddix/f64c97d0863a78454e44c2f7119c2a6a/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
